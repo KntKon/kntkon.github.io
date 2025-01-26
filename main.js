@@ -145,32 +145,29 @@ function computeEquations() {
     computed.push(equation1, equation2, equation3, equation4);
 }
 
-function result(id, eq, height) {
+function result(id, eq,) {
     let DOM = ``;
     if(id==3) {
-        DOM = `<img height="${height}" src="./img/signs/question.png" />`;
+        DOM = `<img src="./img/signs/question.png" />`;
     } else {
         for(let n=0; n<eq.length; n++){
-            DOM += `<img height="${height}" src="./img/numbers/${eq[n]}.png" />`
+            DOM += `<img src="./img/numbers/${eq[n]}.png" />`
         }
     }
     return DOM;
 }
 
 function drawPuzzle() {
-    const height = 150;
     for(let n=0; n<=3; n++){
         let index = n;
         if(index != 4) {
             const div = document.createElement('div');
     
             const el = document.createElement('img');
-            el.height = height;
             el.src = `./img/fruits/${equations[index][0]}_${fruits[equations[index][1]].name}.png`
             div.appendChild(el);
     
             const el2 = document.createElement('img');
-            el2.height = height;
             switch(equations[index][2]) {
                 default:
                     el2.src = `./img/signs/${equations[index][2]}.png`;
@@ -185,12 +182,10 @@ function drawPuzzle() {
             div.appendChild(el2);
     
             const el3 = document.createElement('img');
-            el3.height = height;
             el3.src = `./img/fruits/${equations[index][3]}_${fruits[equations[index][4]].name}.png`
             div.appendChild(el3);
     
             const el4 = document.createElement('img');
-            el4.height = height;
             switch(equations[index][5]) {
                 default:
                     el4.src = `./img/signs/${equations[index][5]}.png`;
@@ -205,23 +200,21 @@ function drawPuzzle() {
             div.appendChild(el4);
     
             const el5 = document.createElement('img');
-            el5.height = height;
             el5.src = `./img/fruits/${equations[index][6]}_${fruits[equations[index][7]].name}.png`
             div.appendChild(el5);
     
             const el6 = document.createElement('img');
-            el6.height = height;
             el6.src = `./img/signs/${equations[index][8]}.png`;
             div.appendChild(el6);
     
-            div.innerHTML += result(index, `${eval(computed[index])}`, height);
+            div.innerHTML += result(index, `${eval(computed[index])}`, 1);
             puzzleEl.appendChild(div);
         } else {
             const div = document.createElement('div');
     
-            div.innerHTML += `<img src="./img/fruits/1_${fruits[0].name}.png" height="${height}" /><img src="./img/signs/=.png" height="${height}" /><img src="./img/signs/none.png" height="${height}" />`;
-            div.innerHTML += `<img src="./img/fruits/1_${fruits[1].name}.png" height="${height}" /><img src="./img/signs/=.png" height="${height}" /><img src="./img/signs/none.png" height="${height}" />`;
-            div.innerHTML += `<img src="./img/fruits/1_${fruits[2].name}.png" height="${height}" /><img src="./img/signs/=.png" height="${height}" /><img src="./img/signs/none.png" height="${height}" />`;
+            div.innerHTML += `<img src="./img/fruits/1_${fruits[0].name}.png" /><img src="./img/signs/=.png" /><img src="./img/signs/none.png" />`;
+            div.innerHTML += `<img src="./img/fruits/1_${fruits[1].name}.png" /><img src="./img/signs/=.png" /><img src="./img/signs/none.png" />`;
+            div.innerHTML += `<img src="./img/fruits/1_${fruits[2].name}.png" /><img src="./img/signs/=.png" /><img src="./img/signs/none.png" />`;
            
             puzzleEl.appendChild(div);
         }
@@ -260,6 +253,7 @@ function generatePuzzle() {
     computeEquations();
 
     if(eval(computed[0])>999 || eval(computed[1])>999 || eval(computed[2])>999) {
+    } else {
         console.log('---------------------'); 
         reload(); return;
     }
