@@ -9,7 +9,7 @@ body {
     background: white;
     --largeur: calc(90vw);
     --hauteur: calc(var(--largeur)/7);
-    --testHauteur: calc(   (var(--hauteur) * 4) + 30px + 153px);
+    --testHauteur: calc(   (var(--hauteur) * 4) + 30px + 72px + ((var(--largeur) - 45px ) / 4));
     margin: 0;
 }
 
@@ -41,12 +41,14 @@ body {
 
 button.buttonsAnsw {
     width: calc((var(--largeur) - 45px ) / 4);
+    height: calc((var(--largeur) - 45px ) / 4);
+    border-radius: 100%;
     background-size: 75px;
     background-repeat: no-repeat;
     background-position: center;
     display: inline-block;
-    font-size: 50px;
-    line-height: 75px;
+    font-size: 30px;
+    line-height: calc((var(--largeur) - 45px ) / 4);
     vertical-align: top;
     font-family: "GenJyuu";
     cursor: pointer;
