@@ -251,9 +251,7 @@ function generatePuzzle() {
 
     computeEquations();
 
-    if(eval(computed[0])>999 || eval(computed[1])>999 || eval(computed[2])>999) {
-    } else {
-        console.log('---------------------'); 
+    if(eval(computed[0])>9999 || eval(computed[1])>9999 || eval(computed[2])>9999) {
         reload(); return;
     }
 
