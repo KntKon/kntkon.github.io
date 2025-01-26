@@ -73,14 +73,14 @@ function pickFruits() {
 
 function genFruits() {
     baseFruits = [
-        { name: 'watermelon', value: genNum(minNumber, maxNumber), id: 0, zwName: '西瓜' },
-        { name: 'strawberry', value: genNum(minNumber, maxNumber), id: 1, zwName: '草莓' },
-        { name: 'banana',     value: genNum(minNumber, maxNumber), id: 2, zwName: '香蕉' },
-        { name: 'apple',      value: genNum(minNumber, maxNumber), id: 3, zwName: '苹果' },
-        { name: 'lemon',      value: genNum(minNumber, maxNumber), id: 4, zwName: '柠檬' },
-        { name: 'orange',     value: genNum(minNumber, maxNumber), id: 5, zwName: '橙子' },
-        { name: 'grape',      value: genNum(minNumber, maxNumber), id: 6, zwName: '葡萄' },
-        { name: 'kiwi',       value: genNum(minNumber, maxNumber), id: 7, zwName: '猕猴桃' },
+        { name: 'Watermelon', value: genNum(minNumber, maxNumber), id: 0, zwName: '西瓜' },
+        { name: 'Strawberry', value: genNum(minNumber, maxNumber), id: 1, zwName: '草莓' },
+        { name: 'Banana',     value: genNum(minNumber, maxNumber), id: 2, zwName: '香蕉' },
+        { name: 'Apple',      value: genNum(minNumber, maxNumber), id: 3, zwName: '苹果' },
+        { name: 'Lemon',      value: genNum(minNumber, maxNumber), id: 4, zwName: '柠檬' },
+        { name: 'Orange',     value: genNum(minNumber, maxNumber), id: 5, zwName: '橙子' },
+        { name: 'Grape',      value: genNum(minNumber, maxNumber), id: 6, zwName: '葡萄' },
+        { name: 'Kiwi',       value: genNum(minNumber, maxNumber), id: 7, zwName: '猕猴桃' },
     ];
 }
 
@@ -277,13 +277,7 @@ function generatePuzzle() {
         reload(); return;
     }
 
-    //console.log(`${fruits[0].name} => ${fruits[0].value}`);
-    //console.log(`${fruits[1].name} => ${fruits[1].value}`);
-    //console.log(`${fruits[2].name} => ${fruits[2].value}`);
-    //console.log(`Answer => ${eval(computed[3])}`);
-
     drawPuzzle();
-    //drawAnswer();
 
     let elButtons = document.getElementsByClassName('buttonsAnsw');
     for(let b=0; b<elButtons.length; b++) {
@@ -325,9 +319,9 @@ function test(index) {
     let elButtons = document.getElementsByClassName('buttonsAnsw');
     let answer = 0;
     if(index<3) {
-        answer = window.prompt(`${fruits[index].name} = ?`);
+        answer = window.prompt(`${fruits[index].name} = `);
     } else {
-        answer = window.prompt(`Total = ?`);
+        answer = window.prompt(`Total = `);
     }
 
     if(answer != parseInt(answer))
@@ -344,7 +338,6 @@ function checkResults() {
             const answer = fruits[b].value;
 
             if(userAnswer != answer) {
-                //console.log(`${fruits[b].name} is wrong. Your answer: ${userAnswer}, actual answer: ${answer}`);
                 elButtons[b].classList.add('incorrect');
                 elButtons[b].lastChild.innerText = answer;
             } else {
@@ -355,7 +348,6 @@ function checkResults() {
             const answer = eval(computed[3]);
 
             if(userAnswer != answer) {
-                //console.log(`Final answer is wrong. Your answer: ${userAnswer}, actual answer: ${answer}`);
                 elButtons[b].classList.add('incorrect');
                 elButtons[b].lastChild.innerText = answer;
             } else {
@@ -365,7 +357,7 @@ function checkResults() {
     }
 
     const button = document.getElementById('button5');
-    button.innerText = `Recommencer`; // ↺
+    button.innerText = `Play Again`; // ↺
     button.setAttribute('onclick', `reload()`);
 }
 
@@ -378,7 +370,7 @@ function resetButton() {
     }
     
     const button = document.getElementById('button5');
-    button.innerText = `Valider`; // 验证结果
+    button.innerText = `Confirm`; // 验证结果
     button.setAttribute('onclick', `checkResults()`);
 }
 

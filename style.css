@@ -6,38 +6,39 @@
 }
 
 *{
-    touch-action: manipulation;
+    touch-action: none;
 }
 
 body {
     background: white;
+    --maxSize: 95svmin;
+    --unit: calc(var(--maxSize)/7);
+    --half: calc(var(--unit)/2);
+    --margin: calc(var(--unit)/9.5);
+    --border: calc(var(--margin)/3);;
 
-    --largeur: calc(90vmin);
-
-    --hauteur: calc(var(--largeur)/7);
-    --testHauteur: calc(   (var(--hauteur) * 6) + ((var(--hauteur) / 10)*3));
-    margin: 0;
-    padding: 0;
+    --testHauteur: calc(   var(--unit)*6 + var(--margin)*3 );
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 #container {
     position: absolute;
-    left: calc( (100% - var(--largeur))/2 );
+    left: calc( (100% - var(--maxSize))/2 );
     top: calc( (100% - var(--testHauteur)) / 2);
-    width: var(--largeur);
+    width: var(--maxSize);
     text-align: center;
 }
 
-
 #puzzle {
-    text-align: left;
-    margin-bottom: calc( var(--hauteur) / 10 );
+    margin-bottom: var(--margin);
     text-align: center;
 }
 
 #puzzle > div {
+    width: calc( 3*var(--unit) + 5*var(--half));
+
     display: inline-block;
-    width: calc( 3*var(--hauteur) + 5*(var(--hauteur)/2));
     text-align: left;
 }
 
@@ -45,109 +46,111 @@ body {
     display: table-cell;
 }
 
-.watermelon_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*0); }
-.watermelon_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*0); }
-.watermelon_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*0); }
+.Watermelon_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*0); }
+.Watermelon_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*0); }
+.Watermelon_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*0); }
 
-.strawberry_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*1); }
-.strawberry_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*1); }
-.strawberry_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*1); }
+.Strawberry_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*1); }
+.Strawberry_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*1); }
+.Strawberry_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*1); }
 
-.banana_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*2); }
-.banana_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*2); }
-.banana_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*2); }
+.Banana_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*2); }
+.Banana_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*2); }
+.Banana_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*2); }
 
-.apple_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*3); }
-.apple_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*3); }
-.apple_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*3); }
+.Apple_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*3); }
+.Apple_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*3); }
+.Apple_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*3); }
 
-.lemon_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*4); }
-.lemon_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*4); }
-.lemon_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*4); }
+.Lemon_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*4); }
+.Lemon_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*4); }
+.Lemon_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*4); }
 
-.orange_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*5); }
-.orange_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*5); }
-.orange_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*5); }
+.Orange_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*5); }
+.Orange_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*5); }
+.Orange_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*5); }
 
-.grape_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*6); }
-.grape_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*6); }
-.grape_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*6); }
+.Grape_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*6); }
+.Grape_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*6); }
+.Grape_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*6); }
 
-.kiwi_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*7); }
-.kiwi_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*7); }
-.kiwi_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*7); }
+.Kiwi_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*7); }
+.Kiwi_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*7); }
+.Kiwi_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*7); }
 
-.sign_plu { background-position-x: calc(0px - var(--hauteur)/2*0); background-position-y: calc(0px - var(--hauteur)*0); }
-.sign_min { background-position-x: calc(0px - var(--hauteur)/2*1); background-position-y: calc(0px - var(--hauteur)*0); }
-.sign_equ { background-position-x: calc(0px - var(--hauteur)/2*2); background-position-y: calc(0px - var(--hauteur)*0); }
-.sign_mul { background-position-x: calc(0px - var(--hauteur)/2*0); background-position-y: calc(0px - var(--hauteur)*1); }
-.sign_div { background-position-x: calc(0px - var(--hauteur)/2*1); background-position-y: calc(0px - var(--hauteur)*1); }
-.sign_que { background-position-x: calc(0px - var(--hauteur)/2*2); background-position-y: calc(0px - var(--hauteur)*1); }
+.sign_plu { background-position-x: calc(0px - var(--unit)/2*0); background-position-y: calc(0px - var(--unit)*0); }
+.sign_min { background-position-x: calc(0px - var(--unit)/2*1); background-position-y: calc(0px - var(--unit)*0); }
+.sign_equ { background-position-x: calc(0px - var(--unit)/2*2); background-position-y: calc(0px - var(--unit)*0); }
+.sign_mul { background-position-x: calc(0px - var(--unit)/2*0); background-position-y: calc(0px - var(--unit)*1); }
+.sign_div { background-position-x: calc(0px - var(--unit)/2*1); background-position-y: calc(0px - var(--unit)*1); }
+.sign_que { background-position-x: calc(0px - var(--unit)/2*2); background-position-y: calc(0px - var(--unit)*1); }
 
 
-.number_1 { background-position-x: calc(0px - var(--hauteur)/2*0); background-position-y: calc(0px - var(--hauteur)*0); }
-.number_2 { background-position-x: calc(0px - var(--hauteur)/2*1); background-position-y: calc(0px - var(--hauteur)*0); }
-.number_3 { background-position-x: calc(0px - var(--hauteur)/2*2); background-position-y: calc(0px - var(--hauteur)*0); }
-.number_4 { background-position-x: calc(0px - var(--hauteur)/2*0); background-position-y: calc(0px - var(--hauteur)*1); }
-.number_5 { background-position-x: calc(0px - var(--hauteur)/2*1); background-position-y: calc(0px - var(--hauteur)*1); }
-.number_6 { background-position-x: calc(0px - var(--hauteur)/2*2); background-position-y: calc(0px - var(--hauteur)*1); }
-.number_7 { background-position-x: calc(0px - var(--hauteur)/2*0); background-position-y: calc(0px - var(--hauteur)*2); }
-.number_8 { background-position-x: calc(0px - var(--hauteur)/2*1); background-position-y: calc(0px - var(--hauteur)*2); }
-.number_9 { background-position-x: calc(0px - var(--hauteur)/2*2); background-position-y: calc(0px - var(--hauteur)*2); }
-.number_0 { background-position-x: calc(0px - var(--hauteur)/2*0); background-position-y: calc(0px - var(--hauteur)*3); }
+.number_1 { background-position-x: calc(0px - var(--unit)/2*0); background-position-y: calc(0px - var(--unit)*0); }
+.number_2 { background-position-x: calc(0px - var(--unit)/2*1); background-position-y: calc(0px - var(--unit)*0); }
+.number_3 { background-position-x: calc(0px - var(--unit)/2*2); background-position-y: calc(0px - var(--unit)*0); }
+.number_4 { background-position-x: calc(0px - var(--unit)/2*0); background-position-y: calc(0px - var(--unit)*1); }
+.number_5 { background-position-x: calc(0px - var(--unit)/2*1); background-position-y: calc(0px - var(--unit)*1); }
+.number_6 { background-position-x: calc(0px - var(--unit)/2*2); background-position-y: calc(0px - var(--unit)*1); }
+.number_7 { background-position-x: calc(0px - var(--unit)/2*0); background-position-y: calc(0px - var(--unit)*2); }
+.number_8 { background-position-x: calc(0px - var(--unit)/2*1); background-position-y: calc(0px - var(--unit)*2); }
+.number_9 { background-position-x: calc(0px - var(--unit)/2*2); background-position-y: calc(0px - var(--unit)*2); }
+.number_0 { background-position-x: calc(0px - var(--unit)/2*0); background-position-y: calc(0px - var(--unit)*3); }
 
 .but_que { background-image: none !important; }
 
 #puzzle > div > .fruits {
-    width: var(--hauteur) !important;
-    height: var(--hauteur) !important;
+    width: var(--unit) !important;
+    height: var(--unit) !important;
     background-image: url('./img/fruits.png');
-    background-size: calc( var(--hauteur) * 3 );
+    background-size: calc( var(--unit) * 3 );
 }
 
 #puzzle > div > .signs {
-    width: calc(var(--hauteur)/2) !important;
-    height: var(--hauteur) !important;
+    width: var(--half) !important;
+    height: var(--unit) !important;
     background-image: url('./img/signs.png');
-    background-size: calc( var(--hauteur) * 1.5 );
+    background-size: calc( var(--unit) * 1.5 );
 }
 
 #puzzle > div > .numbers {
-    width: calc(var(--hauteur)/2) !important;
-    height: var(--hauteur) !important;
+    width: var(--half) !important;
+    height: var(--unit) !important;
     background-image: url('./img/numbers.png');
-    background-size: calc( var(--hauteur) * 1.5 );
+    background-size: calc( var(--unit) * 1.5 );
 }
 
 button.buttonsAnsw {
-    width: var(--hauteur);
-    height: var(--hauteur);
+    width: var(--unit);
+    height: var(--unit);
 
     box-sizing: border-box;
     
     background-image: url('./img/fruits.png');
-    background-size: calc( var(--hauteur) * 3 );
+    background-size: calc( var(--unit)*3 );
 
-    border-radius: calc(var(--hauteur)/10);
-    border: calc(var(--hauteur)/40) solid grey;
-    line-height: var(--hauteur);
+    border-radius: calc(var(--unit)/10);
+    border: var(--border) solid grey;
+
     vertical-align: top;
-    cursor: pointer;
     padding: 0 !important;
 
+    cursor: pointer;
+
+    line-height: var(--unit);
     font-family: "GenJyuu";
-    font-size: calc(var(--hauteur)/2);
+    font-size: var(--half);
     color: white;
     text-shadow:     2px  2px black, 2px -2px black, -2px  2px black, -2px -2px black,
                      0px  2px black, 0px -2px black, 2px  0px black, -2px  0px black;
 }
 
 button.buttonsAnsw + button.buttonsAnsw {
-    margin-left: calc( var(--hauteur) / 10 );
+    margin-left: var(--margin);
 }
 
 button.buttonsAnsw:nth-child(5) {
-    width: calc(var(--hauteur) * 2 + var(--hauteur) / 10 );
+    width: calc(var(--unit)*2 + var(--margin) );
 }
 
 button.buttonsAnsw > img {
@@ -157,61 +160,27 @@ button.buttonsAnsw > img {
 button.finish {
     box-sizing: border-box;
 
-    height: var(--hauteur);
-    width: calc(var(--hauteur) * 5 + ( (var(--hauteur) / 10) * 4 ));
+    height: var(--unit);
+    width: calc(var(--unit)*5 + var(--margin)*4 + var(--border)*3);
     
-    border-radius: calc(var(--hauteur)/10);
-    border: calc(var(--hauteur)/40) solid grey;
+    border-radius: calc(var(--unit)/10);
+    border: var(--border) solid grey;
 
-    font-size: calc(var(--hauteur)/2);
+    font-size: var(--half);
     color: white;
     text-shadow:     2px  2px black, 2px -2px black, -2px  2px black, -2px -2px black,
                      0px  2px black, 0px -2px black, 2px  0px black, -2px  0px black;
 
-    margin-top: calc( var(--hauteur) / 10 );
+    margin-top: var(--margin);
     vertical-align: top;
 }
 
 .correct {
     background-color: lightgreen;
-    border-color: darkgreen;
+    border-color: darkgreen !important;
 }
 
 .incorrect {
     background-color: lightcoral;
-    border-color: darkred;
-}
-
-
-/*
-#puzzle > div:nth-child(4) {
-    box-shadow: 0 26px 1px -25px var(--borderColor);
-}
-
-#puzzle > div:last-child {
-    width: calc(1000px - 25px);
-    padding: 0 calc(25px / 2);
-    box-shadow: 0 -26px 1px -25px var(--borderColor);
-}
-*/
-
-#answer {
-    background: red;
-    width: 1000px;
-    position: absolute;
-    left: calc( (100% - 1000px) / 2 );
-    top: 790px;
-}
-
-#answer > div {
-    background: white;
-    width: 700px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
-}
-
-#answer > div > .smallDivider {
-    display: inline-block;
-    margin: 0 10px;
+    border-color: darkred !important;
 }
