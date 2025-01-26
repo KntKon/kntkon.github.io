@@ -5,6 +5,10 @@
         url("./GenJyuu.ttf") format("truetype");
 }
 
+*{
+    touch-action: manipulation;
+}
+
 body {
     background: white;
     --largeur: calc(90vw);
@@ -96,7 +100,7 @@ body {
     height: var(--hauteur) !important;
     background-image: url('./img/fruits.png');
     background-size: calc( var(--hauteur) * 3 );
-    background-color: red;
+    background-color: blue;
 }
 
 #puzzle > div > .signs {
