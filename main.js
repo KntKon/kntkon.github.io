@@ -9,7 +9,6 @@ let maxNumber = 9;
 const puzzleEl = document.getElementById('puzzle');
 const answerEl = document.getElementById('answer');
 
-
 function genNum(min, max) {
     const totalNumbers = max-min;
     const number = Math.round(Math.random()*totalNumbers)+min;
@@ -271,9 +270,9 @@ function generatePuzzle() {
         elButtons[b].setAttribute('onclick', `test(${b})`);
         const image = document.getElementById(`image${b+1}`);
         if(b<3) {
-            image.src = `./img/fruits/1_${fruits[b].name}.png`;
+            elButtons[b].style.backgroundImage = `url('./img/fruits/1_${fruits[b].name}.png')`;
         } else {
-            image.src = `./img/signs/question.png`;
+            elButtons[b].style.backgroundImage = `url('./img/fruits/question.png')`;
         }
     }
 }
