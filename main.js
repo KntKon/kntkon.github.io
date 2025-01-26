@@ -325,9 +325,9 @@ function test(index) {
     let elButtons = document.getElementsByClassName('buttonsAnsw');
     let answer = 0;
     if(index<3) {
-        answer = window.prompt(`${fruits[index].zwName} = ?`, '???');
+        answer = window.prompt(`${fruits[index].name} = ?`);
     } else {
-        answer = window.prompt(`最终答案 = ?`, '???');
+        answer = window.prompt(`Total = ?`);
     }
 
     if(answer != parseInt(answer))
