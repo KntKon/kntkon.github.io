@@ -1,0 +1,111 @@
+
+@font-face {
+    font-family: "GenJyuu";
+    src:
+        url("./GenJyuu.ttf") format("truetype");
+}
+
+body {
+    background: white;
+}
+
+#container {
+    position: absolute;
+    width: 1000px;
+    height: 819px;
+    left: calc( (100% - 1000px) / 2 );
+    top: calc( (100% - 819px) / 2 );
+    text-align: center;
+}
+
+#puzzle {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#puzzle > div {
+    width: calc(1000px - 100px);
+    padding: 0 50px;
+}
+
+/*
+#puzzle > div:nth-child(4) {
+    box-shadow: 0 26px 1px -25px var(--borderColor);
+}
+
+#puzzle > div:last-child {
+    width: calc(1000px - 25px);
+    padding: 0 calc(25px / 2);
+    box-shadow: 0 -26px 1px -25px var(--borderColor);
+}
+*/
+
+#answer {
+    background: red;
+    width: 1000px;
+    position: absolute;
+    left: calc( (100% - 1000px) / 2 );
+    top: 790px;
+}
+
+#answer > div {
+    background: white;
+    width: 700px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#answer > div > .smallDivider {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+button.buttonsAnsw {
+    /*height: 79px;*/
+    /*width: 79px;*/
+    width: 210px;
+    margin: 0 5px;
+    display: inline-block;
+    font-size: 50px;
+    line-height: 75px;
+    vertical-align: top;
+    font-family: "GenJyuu";
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+button.buttonsAnsw:nth-child(5) {
+    width: 300px;
+}
+
+button.buttonsAnsw > img {
+    vertical-align: top;
+}
+
+button.finish {
+    margin-top: 15px;
+    margin-right: 10px;
+    width: 886px;
+    height: 72px;
+    font-size: 50px;
+    vertical-align: top;
+}
+
+button.reload {
+    margin-top: 15px;
+    width: 72px;
+    height: 72px;
+    font-size: 50px;
+    vertical-align: top;
+}
+
+.correct {
+    background: lightgreen;
+    border-color: darkgreen;
+}
+
+.incorrect {
+    background: lightcoral;
+    border-color: darkred;
+}
