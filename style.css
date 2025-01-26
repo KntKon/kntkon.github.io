@@ -121,6 +121,7 @@ body {
 }
 
 button.buttonsAnsw {
+    position: relative;
     width: var(--unit);
     height: var(--unit);
 
@@ -128,9 +129,10 @@ button.buttonsAnsw {
     
     background-image: url('./img/fruits.png');
     background-size: calc( var(--unit)*3 );
+    background-color: rgba(240,240,240,1);
 
     border-radius: calc(var(--unit)/10);
-    border: var(--border) solid grey;
+    border: var(--border) solid silver;
 
     vertical-align: top;
     padding: 0 !important;
@@ -158,13 +160,15 @@ button.buttonsAnsw > img {
 }
 
 button.finish {
+    cursor: pointer;
+    
     box-sizing: border-box;
 
     height: var(--unit);
     width: calc(var(--unit)*5 + var(--margin)*4 + var(--border)*3);
     
     border-radius: calc(var(--unit)/10);
-    border: var(--border) solid grey;
+    border: var(--border) solid silver;
 
     font-size: var(--half);
     color: white;
@@ -176,11 +180,11 @@ button.finish {
 }
 
 .correct {
-    background-color: lightgreen;
+    background-color: lightgreen !important;
     border-color: darkgreen !important;
 }
 
 .incorrect {
-    background-color: lightcoral;
+    background-color: lightcoral !important;
     border-color: darkred !important;
 }
