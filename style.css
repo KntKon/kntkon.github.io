@@ -161,7 +161,7 @@ button.buttonsAnsw > img {
 
 button.finish {
     cursor: pointer;
-    
+
     box-sizing: border-box;
 
     height: var(--unit);
@@ -169,6 +169,7 @@ button.finish {
     
     border-radius: calc(var(--unit)/10);
     border: var(--border) solid silver;
+    background-color: rgba(240,240,240,1);
 
     font-size: var(--half);
     color: white;
