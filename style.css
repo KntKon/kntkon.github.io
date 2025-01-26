@@ -119,7 +119,6 @@ button.buttonsAnsw {
     background-image: url('./img/fruits.png');
     background-size: calc( var(--hauteur) * 3 );
 
-
     display: inline-block;
     border-radius: calc(var(--hauteur)/10);
     font-size: calc(var(--hauteur)/2);
@@ -128,6 +127,10 @@ button.buttonsAnsw {
     font-family: "GenJyuu";
     cursor: pointer;
     padding: 0 !important;
+
+    color: white;
+    text-shadow: 2px 2px black, -2px  2px black, -2px -2px black, 2px -2px black,
+                 0px 3px black,  0px -3px black, -3px  0px black, 3px  0px black;
 }
 
 button.buttonsAnsw + button.buttonsAnsw {
