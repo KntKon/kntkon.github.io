@@ -11,15 +11,18 @@
 
 body {
     background: white;
-    --largeur: calc(90vw);
+
+    --largeur: calc(90vmin);
+
     --hauteur: calc(var(--largeur)/7);
-    --testHauteur: calc(   (var(--hauteur) * 4) + 30px + 72px + ((var(--largeur) - 45px ) / 4));
+    --testHauteur: calc(   (var(--hauteur) * 6) + ((var(--hauteur) / 10)*3));
     margin: 0;
+    padding: 0;
 }
 
 #container {
     position: absolute;
-    left: 5vw;
+    left: calc( (100% - var(--largeur))/2 );
     top: calc( (100% - var(--testHauteur)) / 2);
     width: var(--largeur);
     text-align: center;
@@ -34,7 +37,7 @@ body {
 
 #puzzle > div {
     display: inline-block;
-    width: calc( 3*var(--hauteur) + 7*(var(--hauteur)/2));
+    width: calc( 3*var(--hauteur) + 5*(var(--hauteur)/2));
     text-align: left;
 }
 
@@ -100,7 +103,6 @@ body {
     height: var(--hauteur) !important;
     background-image: url('./img/fruits.png');
     background-size: calc( var(--hauteur) * 3 );
-    background-color: blue;
 }
 
 #puzzle > div > .signs {
@@ -120,11 +122,12 @@ body {
 button.buttonsAnsw {
     width: var(--hauteur);
     height: var(--hauteur);
+
+    box-sizing: border-box;
     
     background-image: url('./img/fruits.png');
     background-size: calc( var(--hauteur) * 3 );
 
-    display: inline-block;
     border-radius: calc(var(--hauteur)/10);
     border: calc(var(--hauteur)/40) solid grey;
     line-height: var(--hauteur);
@@ -144,7 +147,7 @@ button.buttonsAnsw + button.buttonsAnsw {
 }
 
 button.buttonsAnsw:nth-child(5) {
-    width: calc(var(--hauteur) * 2);
+    width: calc(var(--hauteur) * 2 + var(--hauteur) / 10 );
 }
 
 button.buttonsAnsw > img {
@@ -152,8 +155,10 @@ button.buttonsAnsw > img {
 }
 
 button.finish {
+    box-sizing: border-box;
+
     height: var(--hauteur);
-    width: calc(var(--hauteur) * 5 + 45px);
+    width: calc(var(--hauteur) * 5 + ( (var(--hauteur) / 10) * 4 ));
     
     border-radius: calc(var(--hauteur)/10);
     border: calc(var(--hauteur)/40) solid grey;
@@ -162,22 +167,6 @@ button.finish {
     color: white;
     text-shadow:     2px  2px black, 2px -2px black, -2px  2px black, -2px -2px black,
                      0px  2px black, 0px -2px black, 2px  0px black, -2px  0px black;
-
-    margin-top: calc( var(--hauteur) / 10 );
-    vertical-align: top;
-}
-
-button.reload {
-    width: calc(var(--hauteur));
-    height: var(--hauteur);
-
-    border-radius: calc(var(--hauteur)/10);
-    border: 2px solid grey;
-
-    font-size: calc(var(--hauteur)/2);
-    color: white;
-    text-shadow: 2px 2px black, -2px  2px black, -2px -2px black, 2px -2px black,
-                 0px 3px black,  0px -3px black, -3px  0px black, 3px  0px black;
 
     margin-top: calc( var(--hauteur) / 10 );
     vertical-align: top;
