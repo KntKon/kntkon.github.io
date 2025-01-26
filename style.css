@@ -26,7 +26,6 @@ body {
     text-align: left;
     margin-bottom: 15px;
     text-align: center;
-    background: blue;
 }
 
 #puzzle > div {
@@ -35,20 +34,96 @@ body {
     text-align: left;
 }
 
-#puzzle > div > img {
+#puzzle > div > div {
+    display: table-cell;
+}
+
+.watermelon_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*0); }
+.watermelon_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*0); }
+.watermelon_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*0); }
+
+.strawberry_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*1); }
+.strawberry_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*1); }
+.strawberry_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*1); }
+
+.banana_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*2); }
+.banana_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*2); }
+.banana_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*2); }
+
+.apple_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*3); }
+.apple_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*3); }
+.apple_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*3); }
+
+.lemon_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*4); }
+.lemon_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*4); }
+.lemon_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*4); }
+
+.orange_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*5); }
+.orange_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*5); }
+.orange_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*5); }
+
+.grape_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*6); }
+.grape_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*6); }
+.grape_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*6); }
+
+.kiwi_1 { background-position-x: calc(0px - var(--hauteur)*0); background-position-y: calc(0px - var(--hauteur)*7); }
+.kiwi_2 { background-position-x: calc(0px - var(--hauteur)*1); background-position-y: calc(0px - var(--hauteur)*7); }
+.kiwi_3 { background-position-x: calc(0px - var(--hauteur)*2); background-position-y: calc(0px - var(--hauteur)*7); }
+
+.sign_plu { background-position-x: calc(0px - var(--hauteur)/2*0); background-position-y: calc(0px - var(--hauteur)*0); }
+.sign_min { background-position-x: calc(0px - var(--hauteur)/2*1); background-position-y: calc(0px - var(--hauteur)*0); }
+.sign_equ { background-position-x: calc(0px - var(--hauteur)/2*2); background-position-y: calc(0px - var(--hauteur)*0); }
+.sign_mul { background-position-x: calc(0px - var(--hauteur)/2*0); background-position-y: calc(0px - var(--hauteur)*1); }
+.sign_div { background-position-x: calc(0px - var(--hauteur)/2*1); background-position-y: calc(0px - var(--hauteur)*1); }
+.sign_que { background-position-x: calc(0px - var(--hauteur)/2*2); background-position-y: calc(0px - var(--hauteur)*1); }
+
+
+.number_1 { background-position-x: calc(0px - var(--hauteur)/2*0); background-position-y: calc(0px - var(--hauteur)*0); }
+.number_2 { background-position-x: calc(0px - var(--hauteur)/2*1); background-position-y: calc(0px - var(--hauteur)*0); }
+.number_3 { background-position-x: calc(0px - var(--hauteur)/2*2); background-position-y: calc(0px - var(--hauteur)*0); }
+.number_4 { background-position-x: calc(0px - var(--hauteur)/2*0); background-position-y: calc(0px - var(--hauteur)*1); }
+.number_5 { background-position-x: calc(0px - var(--hauteur)/2*1); background-position-y: calc(0px - var(--hauteur)*1); }
+.number_6 { background-position-x: calc(0px - var(--hauteur)/2*2); background-position-y: calc(0px - var(--hauteur)*1); }
+.number_7 { background-position-x: calc(0px - var(--hauteur)/2*0); background-position-y: calc(0px - var(--hauteur)*2); }
+.number_8 { background-position-x: calc(0px - var(--hauteur)/2*1); background-position-y: calc(0px - var(--hauteur)*2); }
+.number_9 { background-position-x: calc(0px - var(--hauteur)/2*2); background-position-y: calc(0px - var(--hauteur)*2); }
+.number_0 { background-position-x: calc(0px - var(--hauteur)/2*0); background-position-y: calc(0px - var(--hauteur)*3); }
+
+.but_que { background-image: none !important; }
+
+#puzzle > div > .fruits {
+    width: var(--hauteur) !important;
     height: var(--hauteur) !important;
+    background-image: url('./img/fruits.png');
+    background-size: calc( var(--hauteur) * 3 );
+}
+
+#puzzle > div > .signs {
+    width: calc(var(--hauteur)/2) !important;
+    height: var(--hauteur) !important;
+    background-image: url('./img/signs.png');
+    background-size: calc( var(--hauteur) * 1.5 );
+}
+
+#puzzle > div > .numbers {
+    width: calc(var(--hauteur)/2) !important;
+    height: var(--hauteur) !important;
+    background-image: url('./img/numbers.png');
+    background-size: calc( var(--hauteur) * 1.5 );
 }
 
 button.buttonsAnsw {
-    width: calc((var(--largeur) - 45px ) / 4);
-    height: calc((var(--largeur) - 45px ) / 4);
-    border-radius: 100%;
-    background-size: 75px;
-    background-repeat: no-repeat;
-    background-position: center;
+    width: var(--hauteur);
+    height: var(--hauteur);
+    
+    background-image: url('./img/fruits.png');
+    background-size: calc( var(--hauteur) * 3 );
+
+
     display: inline-block;
-    font-size: 30px;
-    line-height: calc((var(--largeur) - 45px ) / 4);
+    border-radius: calc(var(--hauteur)/10);
+    font-size: calc(var(--hauteur)/2);
+    line-height: var(--hauteur);
     vertical-align: top;
     font-family: "GenJyuu";
     cursor: pointer;
@@ -85,12 +160,12 @@ button.reload {
 }
 
 .correct {
-    background: lightgreen;
+    background-color: lightgreen;
     border-color: darkgreen;
 }
 
 .incorrect {
-    background: lightcoral;
+    background-color: lightcoral;
     border-color: darkred;
 }
 

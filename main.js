@@ -73,14 +73,14 @@ function pickFruits() {
 
 function genFruits() {
     baseFruits = [
-        { name: 'watermelon', value: genNum(minNumber, maxNumber), zwName: '西瓜' },
-        { name: 'strawberry', value: genNum(minNumber, maxNumber), zwName: '草莓' },
-        { name: 'banana',     value: genNum(minNumber, maxNumber), zwName: '香蕉' },
-        { name: 'apple',      value: genNum(minNumber, maxNumber), zwName: '苹果' },
-        { name: 'lemon',      value: genNum(minNumber, maxNumber), zwName: '柠檬' },
-        { name: 'orange',     value: genNum(minNumber, maxNumber), zwName: '橙子' },
-        { name: 'grape',      value: genNum(minNumber, maxNumber), zwName: '葡萄' },
-        { name: 'kiwi',       value: genNum(minNumber, maxNumber), zwName: '猕猴桃' },
+        { name: 'watermelon', value: genNum(minNumber, maxNumber), id: 0, zwName: '西瓜' },
+        { name: 'strawberry', value: genNum(minNumber, maxNumber), id: 1, zwName: '草莓' },
+        { name: 'banana',     value: genNum(minNumber, maxNumber), id: 2, zwName: '香蕉' },
+        { name: 'apple',      value: genNum(minNumber, maxNumber), id: 3, zwName: '苹果' },
+        { name: 'lemon',      value: genNum(minNumber, maxNumber), id: 4, zwName: '柠檬' },
+        { name: 'orange',     value: genNum(minNumber, maxNumber), id: 5, zwName: '橙子' },
+        { name: 'grape',      value: genNum(minNumber, maxNumber), id: 6, zwName: '葡萄' },
+        { name: 'kiwi',       value: genNum(minNumber, maxNumber), id: 7, zwName: '猕猴桃' },
     ];
 }
 
@@ -144,69 +144,91 @@ function computeEquations() {
     computed.push(equation1, equation2, equation3, equation4);
 }
 
-function result(id, eq,) {
-    let DOM = ``;
-    if(id==3) {
-        DOM = `<img src="./img/signs/question.png" />`;
-    } else {
-        for(let n=0; n<eq.length; n++){
-            DOM += `<img src="./img/numbers/${eq[n]}.png" />`
-        }
-    }
-    return DOM;
-}
-
 function drawPuzzle() {
     for(let n=0; n<=3; n++){
         let index = n;
         if(index != 4) {
             const div = document.createElement('div');
     
-            const el = document.createElement('img');
-            el.src = `./img/fruits/${equations[index][0]}_${fruits[equations[index][1]].name}.png`
+            const el = document.createElement('div');
+            el.classList.add(`${fruits[equations[index][1]].name}_${equations[index][0]}`);
+            el.classList.add(`fruits`);
             div.appendChild(el);
-    
-            const el2 = document.createElement('img');
+
+            const el2 = document.createElement('div');
             switch(equations[index][2]) {
                 default:
-                    el2.src = `./img/signs/${equations[index][2]}.png`;
+                    el2.classList.add(`sign_null`);
+                    break;
+                case '+':
+                    el2.classList.add(`sign_plu`);
+                    break;
+                case '-':
+                    el2.classList.add(`sign_min`);
                     break;
                 case '/':
-                    el2.src = `./img/signs/div.png`;
+                    el2.classList.add(`sign_div`);
                     break;
                 case '*':
-                    el2.src = `./img/signs/x.png`;
+                    el2.classList.add(`sign_mul`);
                     break;
             }
+            el2.classList.add(`signs`);
             div.appendChild(el2);
-    
-            const el3 = document.createElement('img');
-            el3.src = `./img/fruits/${equations[index][3]}_${fruits[equations[index][4]].name}.png`
+            
+            const el3 = document.createElement('div');
+            el3.classList.add(`${fruits[equations[index][4]].name}_${equations[index][3]}`);
+            el3.classList.add(`fruits`);
             div.appendChild(el3);
-    
-            const el4 = document.createElement('img');
+
+            const el4 = document.createElement('div');
             switch(equations[index][5]) {
                 default:
-                    el4.src = `./img/signs/${equations[index][5]}.png`;
+                    el4.classList.add(`sign_null`);
+                    break;
+                case '+':
+                    el4.classList.add(`sign_plu`);
+                    break;
+                case '-':
+                    el4.classList.add(`sign_min`);
                     break;
                 case '/':
-                    el4.src = `./img/signs/div.png`;
+                    el4.classList.add(`sign_div`);
                     break;
                 case '*':
-                    el4.src = `./img/signs/x.png`;
+                    el4.classList.add(`sign_mul`);
                     break;
             }
+            el4.classList.add(`signs`);
             div.appendChild(el4);
-    
-            const el5 = document.createElement('img');
-            el5.src = `./img/fruits/${equations[index][6]}_${fruits[equations[index][7]].name}.png`
+            
+            const el5 = document.createElement('div');
+            el5.classList.add(`${fruits[equations[index][7]].name}_${equations[index][6]}`);
+            el5.classList.add(`fruits`);
             div.appendChild(el5);
     
-            const el6 = document.createElement('img');
-            el6.src = `./img/signs/${equations[index][8]}.png`;
+            const el6 = document.createElement('div');
+            el6.classList.add(`sign_equ`);
+            el6.classList.add(`signs`);
             div.appendChild(el6);
     
-            div.innerHTML += result(index, `${eval(computed[index])}`, 1);
+            
+            if(index==3) {
+                const el7 = document.createElement('div');
+                el7.classList.add(`sign_que`);
+                el7.classList.add(`signs`);
+        
+                div.appendChild(el7);
+            } else {
+                const eq = `${eval(computed[index])}`;
+                for(let n=0; n<eq.length; n++){        
+                    const el7 = document.createElement('div');
+                    el7.classList.add(`number_${eq[n]}`);
+                    el7.classList.add(`numbers`);
+        
+                    div.appendChild(el7);
+                }
+            }
             puzzleEl.appendChild(div);
         } else {
             const div = document.createElement('div');
@@ -268,9 +290,9 @@ function generatePuzzle() {
         elButtons[b].setAttribute('onclick', `test(${b})`);
         const image = document.getElementById(`image${b+1}`);
         if(b<3) {
-            elButtons[b].style.backgroundImage = `url('./img/fruits/1_${fruits[b].name}.png')`;
+            elButtons[b].classList.add(`${fruits[b].name}_1`);
         } else {
-            elButtons[b].style.backgroundImage = `url('./img/fruits/question.png')`;
+            elButtons[b].classList.add(`but_que`);
         }
     }
 }
@@ -346,10 +368,11 @@ function checkResults() {
 function resetButton() {
     let elButtons = document.getElementsByClassName('buttonsAnsw');
     for(let b=0; b<elButtons.length; b++) {
-        if(elButtons[b].classList.contains('incorrect'))
-            elButtons[b].classList.remove('incorrect');
-        if(elButtons[b].classList.contains('correct'))
-            elButtons[b].classList.remove('correct');
+        elButtons[b].className = 'buttonsAnsw';
+       //f(contains('incorrect'))
+       //    elButtons[b].classList.remove('incorrect');
+       //if(elButtons[b].classList.contains('correct'))
+       //     elButtons[b].classList.remove('correct');
 
         document.getElementById(`ans${b+1}`).innerText = '';
     }
