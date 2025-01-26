@@ -26,6 +26,7 @@ body {
     text-align: left;
     margin-bottom: 15px;
     text-align: center;
+    background: red;
 }
 
 #puzzle > div {
@@ -56,7 +57,7 @@ button.buttonsAnsw + button.buttonsAnsw {
 }
 
 button.buttonsAnsw:nth-child(5) {
-    width: calc((var(--largeur) - 45px ) / 4);
+    width: calc((var(--largeur) - ( (15px + 2px) * 3 ) ) / 4);
 }
 
 button.buttonsAnsw > img {
