@@ -351,7 +351,7 @@ function resetButton() {
         if(elButtons[b].classList.contains('correct'))
             elButtons[b].classList.remove('correct');
 
-        document.getElementById(`ans${b+1}`).innerText = '...';
+        document.getElementById(`ans${b+1}`).innerText = '';
     }
 }
 
