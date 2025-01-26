@@ -52,6 +52,7 @@ button.buttonsAnsw {
     vertical-align: top;
     font-family: "GenJyuu";
     cursor: pointer;
+    padding: 0 !important;
 }
 
 button.buttonsAnsw + button.buttonsAnsw {
