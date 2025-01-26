@@ -363,19 +363,23 @@ function checkResults() {
             }
         }
     }
+
+    const button = document.getElementById('button5');
+    button.innerText = `Recommencer`; // ↺
+    button.setAttribute('onclick', `reload()`);
 }
 
 function resetButton() {
     let elButtons = document.getElementsByClassName('buttonsAnsw');
     for(let b=0; b<elButtons.length; b++) {
         elButtons[b].className = 'buttonsAnsw';
-       //f(contains('incorrect'))
-       //    elButtons[b].classList.remove('incorrect');
-       //if(elButtons[b].classList.contains('correct'))
-       //     elButtons[b].classList.remove('correct');
 
         document.getElementById(`ans${b+1}`).innerText = '';
     }
+    
+    const button = document.getElementById('button5');
+    button.innerText = `Valider`; // 验证结果
+    button.setAttribute('onclick', `checkResults()`);
 }
 
 function reload() {
