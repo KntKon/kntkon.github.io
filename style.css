@@ -110,6 +110,7 @@ body {
     height: var(--hauteur) !important;
     background-image: url('./img/numbers.png');
     background-size: calc( var(--hauteur) * 1.5 );
+    background-color: red;
 }
 
 button.buttonsAnsw {
