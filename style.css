@@ -42,11 +42,11 @@ body {
 
 #puzzle {
     margin-bottom: var(--unitOne);
-    text-align: left;
+    text-align: center;
 }
 
 #puzzle > div {
-    width: calc( 3*var(--unitFour) + 6*var(--unitTwo));
+    width: calc( 3*var(--unitFour) + 5*var(--unitTwo));
     margin-bottom: -4px;
 
     display: inline-block;
@@ -165,7 +165,7 @@ button.buttonsAnsw::after {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 1px;
+    top: calc(var(--unitOne)/6);
     left: 0;
     content: attr(data-content);
     -webkit-text-stroke: 0px black;
@@ -210,7 +210,7 @@ button.finish::after {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 1px;
+    top: calc(var(--unitOne)/6);
     left: 0;
     content: attr(data-content);
     color: white;
