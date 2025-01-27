@@ -190,7 +190,7 @@ button.buttonsAnsw > img {
 
 button#download {
     position: absolute;
-    top: var(--unitOne);
+    bottom: var(--unitOne);
     right: var(--unitOne);
 
     width: var(--unitFour);
