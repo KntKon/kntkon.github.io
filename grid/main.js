@@ -169,3 +169,7 @@ function download() {
     });
     document.body.style.setProperty("--maxSize", "82.76vmin");
 }
+
+function goBack() {
+    document.location.href = '../index.html';
+}
