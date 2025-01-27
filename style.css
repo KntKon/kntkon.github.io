@@ -1,0 +1,89 @@
+
+@font-face {
+    font-family: "GenJyuu";
+    src:
+        url("./GenJyuu.ttf") format("truetype");
+}
+
+*{
+    touch-action: manipulation;
+}
+
+button { border: 0; }
+
+body {
+    font-family: "GenJyuu";
+    background-image: url('./img/background.png');
+    background-size: 313px;
+    background-color: #fff;
+
+    --maxSize:   82.76vmin;
+    --unitOne:   calc(var(--maxSize)/23);
+    --unitTwo:   calc(var(--unitOne)*2);
+    --unitThree: calc(var(--unitOne)*3);
+    --unitFour: calc(var(--unitOne)*4);
+
+    --contentHeight: calc(var(--unitFour)*4 + var(--unitOne)*5 + var(--unitOne)/4*3);
+    --contentWidth: calc(var(--unitOne)*22);
+
+    margin: 0 !important;
+    padding: 0 !important;
+    user-select: none !important;
+}
+
+#container {
+    position: absolute;
+    left: calc( (100% - var(--contentWidth))/2 );
+    top: calc( (100% - var(--contentHeight)) / 2);
+
+    width: calc(var(--contentWidth) - var(--unitOne)*2);
+    height: calc(var(--contentHeight) - var(--unitOne)*2);
+
+    padding: var(--unitOne);
+    text-align: center;
+    
+    border-radius: var(--unitOne);
+    background-color: #fff;
+    box-shadow: 0 0 0 calc(var(--unitOne)/8) silver, 0 calc(var(--unitOne)/4) 0 calc(var(--unitOne)/8) silver;
+}
+
+#logo {
+    background: red;
+    width: 100%;
+    height: var(--unitFour);
+    margin-bottom: var(--unitOne);
+}
+
+a {
+    display: inline-block;
+    width: var(--unitFour);
+    height: var(--unitFour);
+    
+    background-image: url('./img/save.png');
+    background-size: var(--unitFour);
+
+    border: 0;
+    border-radius: var(--unitOne);
+    background-color: white;
+    box-shadow: 0 0 0 calc(var(--unitOne)/8) silver, 0 calc(var(--unitOne)/4) 0 calc(var(--unitOne)/8) silver;
+
+    padding: 0 !important;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+a + a {
+    margin-left: var(--unitOne);
+}
+
+a:nth-of-type(4n) {
+    margin-bottom: calc(var(--unitOne)/4 + var(--unitOne));
+}
+a:nth-of-type(4n+1) {
+    margin-left: 0;
+}
+
+#none { background-image: url('./img/none.png'); }
+#fruits { background-image: url('./img/fruits.png'); }
+#ABCs { background-image: url('./img/ABCs.png'); }
+#grid { background-image: url('./img/grid.png'); }

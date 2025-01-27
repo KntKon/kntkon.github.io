@@ -391,4 +391,8 @@ function reload() {
     generatePuzzle();
 }
 
+function goBack() {
+    document.location.href = '../index.html';
+}
+
 reload();

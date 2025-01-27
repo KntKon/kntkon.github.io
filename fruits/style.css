@@ -254,3 +254,25 @@ button.finish::after {
     color: white !important;
     -webkit-text-stroke: calc(var(--unitOne)/3) darkred !important;
 }
+
+button#goBack {
+    position: absolute;
+    bottom: var(--unitOne);
+    left: var(--unitOne);
+
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    box-sizing: border-box;
+    
+    background-image: url('./img/back.png');
+    background-size: var(--unitFour);
+
+    border: 0;
+    border-radius: var(--unitOne);
+    background-color: white;
+    box-shadow: 0 0 0 calc(var(--unitOne)/8) silver, 0 calc(var(--unitOne)/4) 0 calc(var(--unitOne)/8) silver;
+
+    padding: 0 !important;
+    cursor: pointer;
+}
