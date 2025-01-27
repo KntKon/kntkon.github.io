@@ -80,7 +80,7 @@ body {
 }
 
 .answerButton {
-    background: #fff;
+    background: red;
     position: relative;
     width: var(--unitFour);
     height: var(--unitFour);
@@ -96,6 +96,7 @@ body {
 }
 
 .answerButton::after {
+    background: blue;
     position: absolute;
     width: 100%;
     height: 100%;
