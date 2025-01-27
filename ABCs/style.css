@@ -1,0 +1,165 @@
+
+@font-face {
+    font-family: "GenJyuu";
+    src:
+        url("./GenJyuu.ttf") format("truetype");
+}
+
+*{
+    touch-action: manipulation;
+}
+
+button { border: 0; }
+
+body {
+    font-family: "GenJyuu";
+    background-image: url('./img/background.png');
+    background-size: 313px;
+    background-color: white;
+
+    --maxSize:   82.76vmin;
+    --unitOne:   calc(var(--maxSize)/20);
+    --unitTwo:   calc(var(--unitOne)*2);
+    --unitThree: calc(var(--unitOne)*3);
+    --unitFour: calc(var(--unitOne)*4);
+
+    --contentHeight: calc(var(--unitOne)*23);
+    --contentWidth: calc(var(--unitOne)*20);
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#container {
+    position: absolute;
+    left: calc( (100% - var(--contentWidth))/2 );
+    top: calc( (100% - var(--contentHeight)) / 2);
+
+    width: calc(var(--contentWidth) - var(--unitOne)*4);
+    height: calc(var(--contentHeight) - var(--unitOne)*2);
+
+    padding: var(--unitOne) calc(var(--unitOne)*2);
+    text-align: center;
+    
+    border-radius: var(--unitOne);
+    background-color: white;
+    box-shadow: 0 0 0 calc(var(--unitOne)/8) silver, 0 calc(var(--unitOne)/4) 0 calc(var(--unitOne)/8) silver;
+}
+
+.puzzleRow {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.puzzleRow:last-child {
+    margin-top: var(--unitOne);
+}
+
+.puzzleRow > * {
+    flex-shrink: 0;
+}
+
+.letterDiv {
+    background-image: url('./img/letters.png');
+    background-position: calc(0px - var(--unitFour)*3) 0;
+    background-size: 400%;
+
+    width: var(--unitFour);
+    height: var(--unitFour);
+}
+
+.letter_a { background-position: calc(0px - var(--unitFour)*0) 0 !important; }
+.letter_b { background-position: calc(0px - var(--unitFour)*1) 0 !important; }
+.letter_c { background-position: calc(0px - var(--unitFour)*2) 0 !important; }
+
+.signDiv {
+    background-image: url('./img/signs.png');
+    background-position: calc(0px - var(--unitTwo)*2) calc(0px - var(--unitFour)*1);
+    background-size: 300%;
+
+    width: var(--unitTwo);
+    height: var(--unitFour);
+}
+
+.sign_plus { background-position: calc(0px - var(--unitTwo)*0) calc(0px - var(--unitFour)*0) !important; }
+.sign_equal { background-position: calc(0px - var(--unitTwo)*2) calc(0px - var(--unitFour)*0) !important; }
+
+.numberDiv {
+    background-image: url('./img/numbers.png');
+    background-position: calc(0px - var(--unitTwo)*1) calc(0px - var(--unitFour)*3);
+    background-size: 300%;
+
+    width: var(--unitTwo);
+    height: var(--unitFour);
+}
+
+.number_1 { background-position: calc(0px - var(--unitTwo)*0) calc(0px - var(--unitFour)*0) !important; }
+.number_2 { background-position: calc(0px - var(--unitTwo)*1) calc(0px - var(--unitFour)*0) !important; }
+.number_3 { background-position: calc(0px - var(--unitTwo)*2) calc(0px - var(--unitFour)*0) !important; }
+.number_4 { background-position: calc(0px - var(--unitTwo)*0) calc(0px - var(--unitFour)*1) !important; }
+.number_5 { background-position: calc(0px - var(--unitTwo)*1) calc(0px - var(--unitFour)*1) !important; }
+.number_6 { background-position: calc(0px - var(--unitTwo)*2) calc(0px - var(--unitFour)*1) !important; }
+.number_7 { background-position: calc(0px - var(--unitTwo)*0) calc(0px - var(--unitFour)*2) !important; }
+.number_8 { background-position: calc(0px - var(--unitTwo)*1) calc(0px - var(--unitFour)*2) !important; }
+.number_9 { background-position: calc(0px - var(--unitTwo)*2) calc(0px - var(--unitFour)*2) !important; }
+.number_0 { background-position: calc(0px - var(--unitTwo)*0) calc(0px - var(--unitFour)*3) !important; }
+.number_m { background-position: calc(0px - var(--unitTwo)*1) calc(0px - var(--unitFour)*3) !important; }
+.number_n { background-position: calc(0px - var(--unitTwo)*2) calc(0px - var(--unitFour)*3) !important; }
+
+.answer {
+    background-image: url('./img/letters_alpha.png');
+    background-position: calc(0px - var(--unitFour)*1) calc(0px - var(--unitFour)*8);
+    background-size: 400%;
+    background-color: rgb(240, 240, 240);
+
+    width: var(--unitFour);
+    height: var(--unitFour);
+    position: relative;
+
+    border-radius: var(--unitOne);
+
+    font-family: "GenJyuu";
+    line-height: var(--unitFour);
+    font-size: var(--unitThree);
+    color: white;
+    -webkit-text-stroke: calc(var(--unitOne)/3) black;
+    padding: 0 !important;
+}
+
+.answer::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+    content: attr(data-content);
+    -webkit-text-stroke: 0px black;
+}
+
+#finish {
+    background-image: none;
+    background-color: rgb(240, 240, 240);
+
+    width: calc(var(--unitFour)*4);
+    height: var(--unitThree);
+    
+    border-radius: var(--unitOne);
+    margin-top: var(--unitOne);
+    
+    line-height: var(--unitThree);
+    font-size: var(--unitTwo);
+}
+
+.correct {
+    background-color: lightgreen !important;
+    color: white !important;
+    -webkit-text-stroke: calc(var(--unitOne)/3) darkgreen !important;
+}
+
+.incorrect {
+    background-color: lightcoral !important;
+    color: white !important;
+    -webkit-text-stroke: calc(var(--unitOne)/3) darkred !important;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>I need to find a name for that sh*t</title>
+        <link rel="styleSheet" href="style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta charset="utf-8">
+	</head>
+	<body>
+        <div id="container">
+            <div id="puzzle">
+                <!-- -->
+                <div class="puzzleRow">
+                    <div class="letterDiv letter_a"></div>
+                    <div class="signDiv sign_plus"></div>
+                    <div class="letterDiv letter_b"></div>
+                    <div class="signDiv sign_equal"></div>
+                    <div class="numberDiv" id="AB1"></div>
+                    <div class="numberDiv" id="AB2"></div>
+                </div>
+                <div class="puzzleRow">
+                    <div class="letterDiv letter_a"></div>
+                    <div class="signDiv sign_plus"></div>
+                    <div class="letterDiv letter_c"></div>
+                    <div class="signDiv sign_equal"></div>
+                    <div class="numberDiv" id="AC1"></div>
+                    <div class="numberDiv" id="AC2"></div>
+                </div>
+                <div class="puzzleRow">
+                    <div class="letterDiv letter_b"></div>
+                    <div class="signDiv sign_plus"></div>
+                    <div class="letterDiv letter_c"></div>
+                    <div class="signDiv sign_equal"></div>
+                    <div class="numberDiv" id="BC1"></div>
+                    <div class="numberDiv" id="BC2"></div>
+                </div>
+                <div class="puzzleRow">
+                    <button class="answer letter_a" id="answer1" data-content="99">99</button>
+                    <button class="answer letter_b" id="answer2" data-content="99">99</button>
+                    <button class="answer letter_c" id="answer3" data-content="99">99</button>
+                    <button class="answer" onclick="checkAnswers()" id="finish" data-content="Confirm">Confirm</button>
+                </div>
+
+
+
+                
+                <!-- -->
+            </div>
+        </div>
+        <!-- <button id="download" onclick="download()"></button> -->
+	</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="./main.js"></script>
