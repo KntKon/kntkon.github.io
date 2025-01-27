@@ -20,7 +20,6 @@ body {
     --unitThree: calc(var(--unitOne)*3);
     --unitFour:  calc(var(--unitOne)*4);
 
-    --border: calc(var(--unitOne)/3);;
     --testHauteur: calc(   var(--unitFour)*5 + var(--unitOne)*4 + var(--unitThree)*1 );
 
     margin: 0 !important;
@@ -31,7 +30,7 @@ body {
     position: absolute;
     background: black;
     padding: var(--unitOne);
-    left: calc( (100% - var(--maxSize))/2 );
+    left: calc( (100% - var(--unitFour)*6 - var(--unitOne)*2)/2 );
     top: calc( (100% - var(--testHauteur)) / 2);
     width: var(--maxSize);
     text-align: center;
