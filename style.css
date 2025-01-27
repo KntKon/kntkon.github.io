@@ -48,9 +48,13 @@ body {
 }
 
 #logo {
-    background: red;
     width: 100%;
     height: var(--unitFour);
+
+    line-height: var(--unitFour);
+    font-size: var(--unitThree);
+    color: #454849;
+
     margin-bottom: var(--unitOne);
 }
 
