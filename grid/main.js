@@ -98,18 +98,6 @@ function drawOnGrid() {
     }
 }
 
-function generatePuzzle() {
-    populateValues();
-    createShownValues();
-
-    drawOnGrid();
-    
-    //for(let i=0; i<answerEl.length; i++) {
-    //    const el = document.getElementById(`${answerEl[i]}`);
-    //    el.addEventListener('click', promptValue);
-    //}
-}
-
 function resetPuzzle() {
     
     answers = [];
@@ -132,20 +120,7 @@ function resetPuzzle() {
         }
     }
 
-    const finishButton = document.getElementById('finish');
-    finishButton.innerText = 'Confirm';
-    finishButton.setAttribute('data-content', 'Confirm');
-    finishButton.setAttribute('onclick', `checkAnswers()`);
-
-    //checkup();
     generatePuzzle();
-}
-
-function checkup() {
-    console.log(answers);
-    console.log(populated);
-    console.log(curPopulated);
-    console.log(values);
 }
 
 function checkAnswers() {
@@ -166,4 +141,14 @@ function checkAnswers() {
     finishButton.setAttribute('onclick', `resetPuzzle()`);
 }
 
-generatePuzzle();
+function generatePuzzle() {
+    const finishButton = document.getElementById('finish');
+    finishButton.innerText = 'Confirm';
+    finishButton.setAttribute('data-content', 'Confirm');
+    finishButton.setAttribute('onclick', `checkAnswers()`);
+
+    populateValues();
+    createShownValues();
+
+    drawOnGrid();
+}
