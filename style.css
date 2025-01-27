@@ -178,7 +178,7 @@ button.finish {
     height: var(--unitThree);
     width: calc(var(--unitFour)*5 + var(--unitOne)*4);
     
-    border-radius: calc(var(--unitFour)/10);
+    border-radius: var(--unitOne);
     border: none;
     background-color: rgba(240,240,240,1);
 
