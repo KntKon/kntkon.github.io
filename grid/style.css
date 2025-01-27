@@ -1,0 +1,161 @@
+
+@font-face {
+    font-family: "GenJyuu";
+    src:
+        url("./GenJyuu.ttf") format("truetype");
+}
+
+*{
+    touch-action: manipulation;
+}
+
+button { border: 0; }
+
+body {
+    font-family: "GenJyuu";
+    background-image: url('./img/background.png');
+    background-size: 313px;
+    background-color: #fff;
+
+    --maxSize:   82.76vmin;
+    --unitOne:   calc(var(--maxSize)/23);
+    --unitTwo:   calc(var(--unitOne)*2);
+    --unitThree: calc(var(--unitOne)*3);
+    --unitFour: calc(var(--unitOne)*4);
+
+    --contentHeight: calc(var(--unitFour)*5 + var(--unitThree) + var(--unitOne)*3);
+    --contentWidth: calc(var(--unitOne)*22);
+
+    margin: 0 !important;
+    padding: 0 !important;
+    user-select: none !important;
+}
+
+#container {
+    position: absolute;
+    left: calc( (100% - var(--contentWidth))/2 );
+    top: calc( (100% - var(--contentHeight)) / 2);
+
+    width: calc(var(--contentWidth) - var(--unitOne)*2);
+    height: calc(var(--contentHeight) - var(--unitOne)*2);
+
+    padding: var(--unitOne);
+    text-align: center;
+    
+    border-radius: var(--unitOne);
+    background-color: #fff;
+    box-shadow: 0 0 0 calc(var(--unitOne)/8) silver, 0 calc(var(--unitOne)/4) 0 calc(var(--unitOne)/8) silver;
+}
+
+#puzzle {
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 0 calc(var(--unitOne)/20) #000;
+    border-radius: calc(var(--unitOne)/2);
+}
+
+.grid {
+    position: relative;
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    line-height: var(--unitFour);
+    font-size: var(--unitTwo);
+
+    box-shadow: 0 0 0 calc(var(--unitOne)/20) #000 inset;
+}
+
+#puzzle>*:nth-child(1) { border-radius: calc(var(--unitOne)/2) 0 0 0; }
+#puzzle>*:nth-child(5) { border-radius: 0 calc(var(--unitOne)/2) 0 0; }
+#puzzle>*:nth-child(21) { border-radius: 0 0 0 calc(var(--unitOne)/2); }
+#puzzle>*:nth-child(25) { border-radius: 0 0 calc(var(--unitOne)/2) 0; }
+
+#puzzle>*:nth-child(1)>button { border-radius: calc(var(--unitOne)/2) 0 0 0; }
+#puzzle>*:nth-child(5)>button { border-radius: 0 calc(var(--unitOne)/2) 0 0; }
+#puzzle>*:nth-child(21)>button { border-radius: 0 0 0 calc(var(--unitOne)/2); }
+#puzzle>*:nth-child(25)>button { border-radius: 0 0 calc(var(--unitOne)/2) 0; }
+
+.grid.blackedOut {
+    background-color: #000;
+}
+
+.answerButton {
+    background: #fff;
+    position: relative;
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    padding: 0 !important;
+
+    font-family: "GenJyuu";
+    line-height: var(--unitFour);
+    font-size: var(--unitTwo);
+    box-shadow: 0 0 0 calc(var(--unitOne)/20) #000 inset;
+    -webkit-text-stroke: calc(var(--unitOne)/3) #000;
+}
+
+.answerButton::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    content: attr(data-content);
+    color: #fff;
+    -webkit-text-stroke: 0px #000;
+}
+
+.answerButton:active {
+    box-shadow: 0 0 0 calc(var(--unitOne)/20) #000 inset, 0 0 calc(var(--unitOne)/6) calc(var(--unitOne)/3) #0f7 inset;
+    background-color: rgba(0 255 127 / 25%);
+}
+
+#finish {
+    position: relative;
+    width: calc(var(--unitFour)*5);
+    height: calc(var(--unitThree));
+    
+    background-image: url('./img/fruits_alpha.png');
+    background-size: calc( var(--unitFour)*3 );
+    background-color: rgba(240,240,240,1);
+
+    border: none;
+    border-radius: var(--unitOne);
+    margin-top: var(--unitOne);
+
+    vertical-align: top;
+    padding: 0 !important;
+
+    cursor: pointer;
+
+    font-family: "GenJyuu";
+    font-size: var(--unitTwo);
+    line-height: var(--unitThree);
+
+    position: relative;
+    color: white;
+    -webkit-text-stroke: calc(var(--unitOne)/3) black;
+}
+
+#finish::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: attr(data-content);
+    -webkit-text-stroke: 0px black;
+}
+
+.correct {
+    background-color: lightgreen !important;
+    color: #fff !important;
+    -webkit-text-stroke: calc(var(--unitOne)/3) darkgreen !important;
+}
+
+.incorrect {
+    background-color: lightcoral !important;
+    color: #fff !important;
+    -webkit-text-stroke: calc(var(--unitOne)/3) darkred !important;
+}
