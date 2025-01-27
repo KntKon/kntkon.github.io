@@ -6,28 +6,33 @@
 }
 
 *{
-    touch-action: none;
+    touch-action: manipulation;
 }
 
 body {
-    background: white;
+    background-image: url('./img/background.png');
+    background-size: 313px;
+    background-color: white;
     --maxSize: 95svmin;
     --unit: calc(var(--maxSize)/7);
     --half: calc(var(--unit)/2);
     --margin: calc(var(--unit)/9.5);
     --border: calc(var(--margin)/3);;
 
-    --testHauteur: calc(   var(--unit)*6 + var(--margin)*3 );
+    --testHauteur: calc(   var(--unit)*6 + var(--margin)*4 );
     margin: 0 !important;
     padding: 0 !important;
 }
 
 #container {
     position: absolute;
+    background-color: rgba(255,255,255,.75);
     left: calc( (100% - var(--maxSize))/2 );
     top: calc( (100% - var(--testHauteur)) / 2);
     width: var(--maxSize);
     text-align: center;
+    padding-bottom: var(--margin);
+    border-radius: calc(var(--half)/2);
 }
 
 #puzzle {
@@ -173,6 +178,7 @@ button.finish {
 
     font-size: var(--half);
     color: white;
+    font-family: "GenJyuu";
     text-shadow:     2px  2px black, 2px -2px black, -2px  2px black, -2px -2px black,
                      0px  2px black, 0px -2px black, 2px  0px black, -2px  0px black;
 
