@@ -9,6 +9,10 @@
     touch-action: manipulation;
 }
 
+#imageDL {
+    width: 1050px !important;
+}
+
 body {
     background-image: url('./img/background.png');
     background-size: 313px;
@@ -194,8 +198,8 @@ button#download {
 
     box-sizing: border-box;
     
-    background-image: url('./img/fruits_alpha.png');
-    background-size: calc( var(--unitFour)*3 );
+    background-image: url('./img/save.png');
+    background-size: var(--unitFour);
 
     border: 0;
     border-radius: var(--unitOne);
