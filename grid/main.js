@@ -152,3 +152,20 @@ function generatePuzzle() {
 
     drawOnGrid();
 }
+
+function download() {
+    const randomNumber = Math.floor( Math.random() * 1000000000 );
+    document.body.style.setProperty("--maxSize", "960px");
+    html2canvas(puzzleEl).then(function(canvas) {
+        document.body.appendChild(canvas);
+
+        canvas.setAttribute('id', 'imageDL');
+        const image = canvas.toDataURL("image/png", 1.0);
+        const link = document.createElement("a");
+        link.download = `${randomNumber}_puzzle.png`;
+        link.href = image;
+        link.click();
+        document.getElementById('imageDL').remove();
+    });
+    document.body.style.setProperty("--maxSize", "82.76vmin");
+}
