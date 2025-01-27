@@ -13,35 +13,42 @@ body {
     background-image: url('./img/background.png');
     background-size: 313px;
     background-color: white;
-    --maxSize: 95svmin;
-    --unit: calc(var(--maxSize)/7);
-    --half: calc(var(--unit)/2);
-    --margin: calc(var(--unit)/9.5);
-    --border: calc(var(--margin)/3);;
 
-    --testHauteur: calc(   var(--unit)*6 + var(--margin)*4 );
+    --maxSize:   82.76vmin;
+    --unitOne:   calc(var(--maxSize)/24);
+    --unitTwo:   calc(var(--unitOne)*2);
+    --unitThree: calc(var(--unitOne)*3);
+    --unitFour:  calc(var(--unitOne)*4);
+
+    --border: calc(var(--unitOne)/3);;
+    --testHauteur: calc(   var(--unitFour)*5 + var(--unitOne)*4 + var(--unitThree)*1 );
+
     margin: 0 !important;
     padding: 0 !important;
 }
 
 #container {
     position: absolute;
-    background-color: rgba(255,255,255,.75);
+    background: black;
+    padding: var(--unitOne);
     left: calc( (100% - var(--maxSize))/2 );
     top: calc( (100% - var(--testHauteur)) / 2);
     width: var(--maxSize);
     text-align: center;
-    padding-bottom: var(--margin);
-    border-radius: calc(var(--half)/2);
+    
+    border-radius: var(--unitOne);
+    background-color: white;
+    box-shadow: 0 0 0 calc(var(--unitOne)/8) silver, 0 calc(var(--unitOne)/4) 0 calc(var(--unitOne)/8) silver;
 }
 
 #puzzle {
-    margin-bottom: var(--margin);
-    text-align: center;
+    margin-bottom: var(--unitOne);
+    text-align: left;
 }
 
 #puzzle > div {
-    width: calc( 3*var(--unit) + 5*var(--half));
+    width: calc( 3*var(--unitFour) + 6*var(--unitTwo));
+    margin-bottom: -4px;
 
     display: inline-block;
     text-align: left;
@@ -51,113 +58,113 @@ body {
     display: table-cell;
 }
 
-.Watermelon_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*0); }
-.Watermelon_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*0); }
-.Watermelon_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*0); }
+.Watermelon_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*0); }
+.Watermelon_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*0); }
+.Watermelon_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*0); }
 
-.Strawberry_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*1); }
-.Strawberry_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*1); }
-.Strawberry_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*1); }
+.Strawberry_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*1); }
+.Strawberry_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*1); }
+.Strawberry_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*1); }
 
-.Banana_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*2); }
-.Banana_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*2); }
-.Banana_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*2); }
+.Banana_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*2); }
+.Banana_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*2); }
+.Banana_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*2); }
 
-.Apple_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*3); }
-.Apple_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*3); }
-.Apple_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*3); }
+.Apple_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*3); }
+.Apple_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*3); }
+.Apple_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*3); }
 
-.Lemon_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*4); }
-.Lemon_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*4); }
-.Lemon_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*4); }
+.Lemon_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*4); }
+.Lemon_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*4); }
+.Lemon_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*4); }
 
-.Orange_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*5); }
-.Orange_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*5); }
-.Orange_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*5); }
+.Orange_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*5); }
+.Orange_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*5); }
+.Orange_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*5); }
 
-.Grape_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*6); }
-.Grape_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*6); }
-.Grape_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*6); }
+.Grape_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*6); }
+.Grape_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*6); }
+.Grape_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*6); }
 
-.Kiwi_1 { background-position-x: calc(0px - var(--unit)*0); background-position-y: calc(0px - var(--unit)*7); }
-.Kiwi_2 { background-position-x: calc(0px - var(--unit)*1); background-position-y: calc(0px - var(--unit)*7); }
-.Kiwi_3 { background-position-x: calc(0px - var(--unit)*2); background-position-y: calc(0px - var(--unit)*7); }
+.Kiwi_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*7); }
+.Kiwi_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*7); }
+.Kiwi_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*7); }
 
-.sign_plu { background-position-x: calc(0px - var(--unit)/2*0); background-position-y: calc(0px - var(--unit)*0); }
-.sign_min { background-position-x: calc(0px - var(--unit)/2*1); background-position-y: calc(0px - var(--unit)*0); }
-.sign_equ { background-position-x: calc(0px - var(--unit)/2*2); background-position-y: calc(0px - var(--unit)*0); }
-.sign_mul { background-position-x: calc(0px - var(--unit)/2*0); background-position-y: calc(0px - var(--unit)*1); }
-.sign_div { background-position-x: calc(0px - var(--unit)/2*1); background-position-y: calc(0px - var(--unit)*1); }
-.sign_que { background-position-x: calc(0px - var(--unit)/2*2); background-position-y: calc(0px - var(--unit)*1); }
+.sign_plu { background-position-x: calc(0px - var(--unitTwo)*0); background-position-y: calc(0px - var(--unitFour)*0); }
+.sign_min { background-position-x: calc(0px - var(--unitTwo)*1); background-position-y: calc(0px - var(--unitFour)*0); }
+.sign_equ { background-position-x: calc(0px - var(--unitTwo)*2); background-position-y: calc(0px - var(--unitFour)*0); }
+.sign_mul { background-position-x: calc(0px - var(--unitTwo)*0); background-position-y: calc(0px - var(--unitFour)*1); }
+.sign_div { background-position-x: calc(0px - var(--unitTwo)*1); background-position-y: calc(0px - var(--unitFour)*1); }
+.sign_que { background-position-x: calc(0px - var(--unitTwo)*2); background-position-y: calc(0px - var(--unitFour)*1); }
 
 
-.number_1 { background-position-x: calc(0px - var(--unit)/2*0); background-position-y: calc(0px - var(--unit)*0); }
-.number_2 { background-position-x: calc(0px - var(--unit)/2*1); background-position-y: calc(0px - var(--unit)*0); }
-.number_3 { background-position-x: calc(0px - var(--unit)/2*2); background-position-y: calc(0px - var(--unit)*0); }
-.number_4 { background-position-x: calc(0px - var(--unit)/2*0); background-position-y: calc(0px - var(--unit)*1); }
-.number_5 { background-position-x: calc(0px - var(--unit)/2*1); background-position-y: calc(0px - var(--unit)*1); }
-.number_6 { background-position-x: calc(0px - var(--unit)/2*2); background-position-y: calc(0px - var(--unit)*1); }
-.number_7 { background-position-x: calc(0px - var(--unit)/2*0); background-position-y: calc(0px - var(--unit)*2); }
-.number_8 { background-position-x: calc(0px - var(--unit)/2*1); background-position-y: calc(0px - var(--unit)*2); }
-.number_9 { background-position-x: calc(0px - var(--unit)/2*2); background-position-y: calc(0px - var(--unit)*2); }
-.number_0 { background-position-x: calc(0px - var(--unit)/2*0); background-position-y: calc(0px - var(--unit)*3); }
+.number_1 { background-position-x: calc(0px - var(--unitTwo)*0); background-position-y: calc(0px - var(--unitFour)*0); }
+.number_2 { background-position-x: calc(0px - var(--unitTwo)*1); background-position-y: calc(0px - var(--unitFour)*0); }
+.number_3 { background-position-x: calc(0px - var(--unitTwo)*2); background-position-y: calc(0px - var(--unitFour)*0); }
+.number_4 { background-position-x: calc(0px - var(--unitTwo)*0); background-position-y: calc(0px - var(--unitFour)*1); }
+.number_5 { background-position-x: calc(0px - var(--unitTwo)*1); background-position-y: calc(0px - var(--unitFour)*1); }
+.number_6 { background-position-x: calc(0px - var(--unitTwo)*2); background-position-y: calc(0px - var(--unitFour)*1); }
+.number_7 { background-position-x: calc(0px - var(--unitTwo)*0); background-position-y: calc(0px - var(--unitFour)*2); }
+.number_8 { background-position-x: calc(0px - var(--unitTwo)*1); background-position-y: calc(0px - var(--unitFour)*2); }
+.number_9 { background-position-x: calc(0px - var(--unitTwo)*2); background-position-y: calc(0px - var(--unitFour)*2); }
+.number_0 { background-position-x: calc(0px - var(--unitTwo)*0); background-position-y: calc(0px - var(--unitFour)*3); }
 
 .but_que { background-image: none !important; }
 
 #puzzle > div > .fruits {
-    width: var(--unit) !important;
-    height: var(--unit) !important;
+    width: var(--unitFour) !important;
+    height: var(--unitFour) !important;
     background-image: url('./img/fruits.png');
-    background-size: calc( var(--unit) * 3 );
+    background-size: calc( var(--unitFour) * 3 );
 }
 
 #puzzle > div > .signs {
-    width: var(--half) !important;
-    height: var(--unit) !important;
+    width: var(--unitTwo) !important;
+    height: var(--unitFour) !important;
     background-image: url('./img/signs.png');
-    background-size: calc( var(--unit) * 1.5 );
+    background-size: calc( var(--unitFour) * 1.5 );
 }
 
 #puzzle > div > .numbers {
-    width: var(--half) !important;
-    height: var(--unit) !important;
+    width: var(--unitTwo) !important;
+    height: var(--unitFour) !important;
     background-image: url('./img/numbers.png');
-    background-size: calc( var(--unit) * 1.5 );
+    background-size: calc( var(--unitFour) * 1.5 );
 }
 
 button.buttonsAnsw {
     position: relative;
-    width: var(--unit);
-    height: var(--unit);
+    width: var(--unitFour);
+    height: var(--unitFour);
 
     box-sizing: border-box;
     
     background-image: url('./img/fruits.png');
-    background-size: calc( var(--unit)*3 );
+    background-size: calc( var(--unitFour)*3 );
     background-color: rgba(240,240,240,1);
 
-    border-radius: calc(var(--unit)/10);
-    border: var(--border) solid silver;
+    border: none;
+    border-radius: var(--unitOne);
 
     vertical-align: top;
     padding: 0 !important;
 
     cursor: pointer;
 
-    line-height: var(--unit);
     font-family: "GenJyuu";
-    font-size: var(--half);
-    color: white;
-    text-shadow:     2px  2px black, 2px -2px black, -2px  2px black, -2px -2px black,
-                     0px  2px black, 0px -2px black, 2px  0px black, -2px  0px black;
+    font-size: var(--unitThree);
+    line-height: var(--unitFour);
+    color: black;
+    /*text-shadow:     2px  2px black, 2px -2px black, -2px  2px black, -2px -2px black,
+                     0px  2px black, 0px -2px black, 2px  0px black, -2px  0px black;*/
 }
 
 button.buttonsAnsw + button.buttonsAnsw {
-    margin-left: var(--margin);
+    margin-left: calc(var(--unitOne) - 4px);
 }
 
 button.buttonsAnsw:nth-child(5) {
-    width: calc(var(--unit)*2 + var(--margin) );
+    width: calc(var(--unitFour)*2 + var(--unitOne) );
 }
 
 button.buttonsAnsw > img {
@@ -169,29 +176,36 @@ button.finish {
 
     box-sizing: border-box;
 
-    height: var(--unit);
-    width: calc(var(--unit)*5 + var(--margin)*4 + var(--border)*3);
+    height: var(--unitThree);
+    width: calc(var(--unitFour)*5 + var(--unitOne)*4);
     
-    border-radius: calc(var(--unit)/10);
-    border: var(--border) solid silver;
+    border-radius: calc(var(--unitFour)/10);
+    border: none;
     background-color: rgba(240,240,240,1);
 
-    font-size: var(--half);
-    color: white;
+    font-size: var(--unitTwo);
+    line-height: var(--unitThree);
     font-family: "GenJyuu";
-    text-shadow:     2px  2px black, 2px -2px black, -2px  2px black, -2px -2px black,
-                     0px  2px black, 0px -2px black, 2px  0px black, -2px  0px black;
+    color: black;
+    /*text-shadow:     2px  2px black, 2px -2px black, -2px  2px black, -2px -2px black,
+                     0px  2px black, 0px -2px black, 2px  0px black, -2px  0px black;*/
 
-    margin-top: var(--margin);
+    margin-top: var(--unitOne);
     vertical-align: top;
 }
 
 .correct {
     background-color: lightgreen !important;
     border-color: darkgreen !important;
+    color: limegreen !important;
+    text-shadow: calc(var(--unitOne)/8) calc(var(--unitOne)/8) darkgreen !important;
+    background-image: none !important;
 }
 
 .incorrect {
     background-color: lightcoral !important;
     border-color: darkred !important;
+    color: red !important;
+    text-shadow: calc(var(--unitOne)/8) calc(var(--unitOne)/8) darkred !important;
+    background-image: none !important;
 }
