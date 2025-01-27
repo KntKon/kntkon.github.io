@@ -215,8 +215,8 @@ function drawPuzzle() {
             
             if(index==3) {
                 const el7 = document.createElement('div');
-                el7.classList.add(`sign_que`);
-                el7.classList.add(`signs`);
+                el7.classList.add(`Addon_1`);
+                el7.classList.add(`fruits`);
         
                 div.appendChild(el7);
             } else {
@@ -286,7 +286,7 @@ function generatePuzzle() {
         if(b<3) {
             elButtons[b].classList.add(`${fruits[b].name}_1`);
         } else {
-            elButtons[b].classList.add(`but_que`);
+            elButtons[b].classList.add('Addon_1');
         }
     }
 }
@@ -328,6 +328,7 @@ function test(index) {
         answer = 0;
 
     elButtons[index].lastChild.innerText = parseInt(answer);
+    elButtons[index].setAttribute('data-content', `${parseInt(answer)}`);
 }
 
 function checkResults() {
@@ -340,6 +341,7 @@ function checkResults() {
             if(userAnswer != answer) {
                 elButtons[b].classList.add('incorrect');
                 elButtons[b].lastChild.innerText = answer;
+                elButtons[b].setAttribute('data-content', `${answer}`);
             } else {
                 elButtons[b].classList.add('correct');
             }
@@ -350,6 +352,7 @@ function checkResults() {
             if(userAnswer != answer) {
                 elButtons[b].classList.add('incorrect');
                 elButtons[b].lastChild.innerText = answer;
+                elButtons[b].setAttribute('data-content', `${answer}`);
             } else {
                 elButtons[b].classList.add('correct');
             }
@@ -359,12 +362,14 @@ function checkResults() {
     const button = document.getElementById('button5');
     button.innerText = `Play Again`; // ↺
     button.setAttribute('onclick', `reload()`);
+    button.setAttribute('data-content', `Play Again`);
 }
 
 function resetButton() {
     let elButtons = document.getElementsByClassName('buttonsAnsw');
     for(let b=0; b<elButtons.length; b++) {
         elButtons[b].className = 'buttonsAnsw';
+        elButtons[b].setAttribute('data-content', ` `);
 
         document.getElementById(`ans${b+1}`).innerText = '';
     }
@@ -372,6 +377,7 @@ function resetButton() {
     const button = document.getElementById('button5');
     button.innerText = `Confirm`; // 验证结果
     button.setAttribute('onclick', `checkResults()`);
+    button.setAttribute('data-content', `Confirm`);
 }
 
 function reload() {
