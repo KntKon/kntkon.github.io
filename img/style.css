@@ -1,0 +1,230 @@
+
+@font-face {
+    font-family: "GenJyuu";
+    src:
+        url("./GenJyuu.ttf") format("truetype");
+}
+
+*{
+    touch-action: manipulation;
+}
+
+body {
+    background-image: url('./img/background.png');
+    background-size: 313px;
+    background-color: white;
+
+    --maxSize:   82.76vmin;
+    --unitOne:   calc(var(--maxSize)/24);
+    --unitTwo:   calc(var(--unitOne)*2);
+    --unitThree: calc(var(--unitOne)*3);
+    --unitFour:  calc(var(--unitOne)*4);
+
+    --testHauteur: calc(   var(--unitFour)*5 + var(--unitOne)*4 + var(--unitThree)*1 );
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#container {
+    position: absolute;
+    background: black;
+    padding: var(--unitOne);
+    left: calc( (100% - var(--unitFour)*6 - var(--unitOne)*2)/2 );
+    top: calc( (100% - var(--testHauteur)) / 2);
+    width: var(--maxSize);
+    text-align: center;
+    
+    border-radius: var(--unitOne);
+    background-color: white;
+    box-shadow: 0 0 0 calc(var(--unitOne)/8) silver, 0 calc(var(--unitOne)/4) 0 calc(var(--unitOne)/8) silver;
+}
+
+#puzzle {
+    margin-bottom: var(--unitOne);
+    text-align: left;
+}
+
+#puzzle > div {
+    width: calc( 3*var(--unitFour) + 6*var(--unitTwo));
+    margin-bottom: -4px;
+
+    display: inline-block;
+    text-align: left;
+}
+
+#puzzle > div > div {
+    display: table-cell;
+}
+
+.Watermelon_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*0); }
+.Watermelon_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*0); }
+.Watermelon_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*0); }
+
+.Strawberry_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*1); }
+.Strawberry_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*1); }
+.Strawberry_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*1); }
+
+.Banana_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*2); }
+.Banana_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*2); }
+.Banana_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*2); }
+
+.Apple_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*3); }
+.Apple_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*3); }
+.Apple_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*3); }
+
+.Lemon_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*4); }
+.Lemon_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*4); }
+.Lemon_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*4); }
+
+.Orange_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*5); }
+.Orange_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*5); }
+.Orange_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*5); }
+
+.Grape_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*6); }
+.Grape_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*6); }
+.Grape_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*6); }
+
+.Kiwi_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*7); }
+.Kiwi_2 { background-position-x: calc(0px - var(--unitFour)*1); background-position-y: calc(0px - var(--unitFour)*7); }
+.Kiwi_3 { background-position-x: calc(0px - var(--unitFour)*2); background-position-y: calc(0px - var(--unitFour)*7); }
+
+.Addon_1 { background-position-x: calc(0px - var(--unitFour)*0); background-position-y: calc(0px - var(--unitFour)*8); }
+
+.sign_plu { background-position-x: calc(0px - var(--unitTwo)*0); background-position-y: calc(0px - var(--unitFour)*0); }
+.sign_min { background-position-x: calc(0px - var(--unitTwo)*1); background-position-y: calc(0px - var(--unitFour)*0); }
+.sign_equ { background-position-x: calc(0px - var(--unitTwo)*2); background-position-y: calc(0px - var(--unitFour)*0); }
+.sign_mul { background-position-x: calc(0px - var(--unitTwo)*0); background-position-y: calc(0px - var(--unitFour)*1); }
+.sign_div { background-position-x: calc(0px - var(--unitTwo)*1); background-position-y: calc(0px - var(--unitFour)*1); }
+.sign_que { background-position-x: calc(0px - var(--unitTwo)*2); background-position-y: calc(0px - var(--unitFour)*1); }
+
+
+.number_1 { background-position-x: calc(0px - var(--unitTwo)*0); background-position-y: calc(0px - var(--unitFour)*0); }
+.number_2 { background-position-x: calc(0px - var(--unitTwo)*1); background-position-y: calc(0px - var(--unitFour)*0); }
+.number_3 { background-position-x: calc(0px - var(--unitTwo)*2); background-position-y: calc(0px - var(--unitFour)*0); }
+.number_4 { background-position-x: calc(0px - var(--unitTwo)*0); background-position-y: calc(0px - var(--unitFour)*1); }
+.number_5 { background-position-x: calc(0px - var(--unitTwo)*1); background-position-y: calc(0px - var(--unitFour)*1); }
+.number_6 { background-position-x: calc(0px - var(--unitTwo)*2); background-position-y: calc(0px - var(--unitFour)*1); }
+.number_7 { background-position-x: calc(0px - var(--unitTwo)*0); background-position-y: calc(0px - var(--unitFour)*2); }
+.number_8 { background-position-x: calc(0px - var(--unitTwo)*1); background-position-y: calc(0px - var(--unitFour)*2); }
+.number_9 { background-position-x: calc(0px - var(--unitTwo)*2); background-position-y: calc(0px - var(--unitFour)*2); }
+.number_0 { background-position-x: calc(0px - var(--unitTwo)*0); background-position-y: calc(0px - var(--unitFour)*3); }
+
+.but_que { background-image: none !important; }
+
+#puzzle > div > .fruits {
+    width: var(--unitFour) !important;
+    height: var(--unitFour) !important;
+    background-image: url('./img/fruits.png');
+    background-size: calc( var(--unitFour) * 3 );
+}
+
+#puzzle > div > .signs {
+    width: var(--unitTwo) !important;
+    height: var(--unitFour) !important;
+    background-image: url('./img/signs.png');
+    background-size: calc( var(--unitFour) * 1.5 );
+}
+
+#puzzle > div > .numbers {
+    width: var(--unitTwo) !important;
+    height: var(--unitFour) !important;
+    background-image: url('./img/numbers.png');
+    background-size: calc( var(--unitFour) * 1.5 );
+}
+
+button.buttonsAnsw {
+    position: relative;
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    box-sizing: border-box;
+    
+    background-image: url('./img/fruits_alpha.png');
+    background-size: calc( var(--unitFour)*3 );
+    background-color: rgba(240,240,240,1);
+
+    border: none;
+    border-radius: var(--unitOne);
+
+    vertical-align: top;
+    padding: 0 !important;
+
+    cursor: pointer;
+
+    font-family: "GenJyuu";
+    font-size: var(--unitThree);
+    line-height: var(--unitFour);
+
+    position: relative;
+    color: white;
+    -webkit-text-stroke: calc(var(--unitOne)/3) black;
+}
+
+button.buttonsAnsw::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    content: attr(data-content);
+    -webkit-text-stroke: 0px black;
+}
+
+button.buttonsAnsw + button.buttonsAnsw {
+    margin-left: calc(var(--unitOne) - 4px);
+}
+
+button.buttonsAnsw:nth-child(5) {
+    width: calc(var(--unitFour)*2 + var(--unitOne) );
+    background-position-x: calc((var(--unitFour)*1 + var(--unitOne))/2)  !important;
+}
+
+button.buttonsAnsw > img {
+    vertical-align: top;
+}
+
+button.finish {
+    cursor: pointer;
+
+    height: var(--unitThree);
+    width: calc(var(--unitFour)*5 + var(--unitOne)*4);
+    
+    border-radius: var(--unitOne);
+    border: none;
+    background-color: rgba(240,240,240,1);
+
+    font-size: var(--unitTwo);
+    line-height: var(--unitThree);
+    font-family: "GenJyuu";
+    color: white;
+    -webkit-text-stroke: calc(var(--unitOne)/3) black;
+
+    margin-top: var(--unitOne);
+    vertical-align: top;
+
+    position: relative;
+}
+
+button.finish::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    content: attr(data-content);
+    color: white;
+    -webkit-text-stroke: 0px black;
+}
+
+.correct {
+    background-color: lightgreen !important;
+    color: white !important;
+    -webkit-text-stroke: calc(var(--unitOne)/3) darkgreen !important;
+}
+
+.incorrect {
+    background-color: lightcoral !important;
+    color: white !important;
+    -webkit-text-stroke: calc(var(--unitOne)/3) darkred !important;
+}
