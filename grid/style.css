@@ -96,7 +96,7 @@ body {
 }
 
 .answerButton::after {
-    background: blue;
+    background: green;
     position: absolute;
     width: 100%;
     height: 100%;

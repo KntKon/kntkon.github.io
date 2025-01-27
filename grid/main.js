@@ -54,8 +54,7 @@ function createShownValues() {
         curPopulated.push(`${lastRandX}-${lastRandY}`);
 }
 
-function promptValue(event) {
-    const index = event.target.getAttribute('id');
+function promptValue(index) {
     const el = document.getElementById(index);
     let answer = window.prompt(`Value of ${index} = `);
     if(answer != parseInt(answer) || parseInt(answer) < 0) answer = 0;
@@ -87,12 +86,13 @@ function drawOnGrid() {
             if(curPopulated.includes(`${i}-${j}`)) {
                 puzzleEl.children[(i*10+j*2)].innerText = values[i][j];
             } else {
-                const el = document.createElement('button');
+                const el = puzzleEl.children[(i*10+j*2)];
+                const index = `${document.getElementsByClassName("answerButton").length+1}`;
                 el.classList.add('answerButton');
-                el.setAttribute('id', `answer${document.getElementsByClassName('answerButton').length+1}`);
+                el.setAttribute('id', `answer${index}`);
                 el.setAttribute('data-content', '');
+                el.setAttribute('onclick', `promptValue('answer${index}')`);
                 answers.push(values[i][j]);
-                puzzleEl.children[(i*10+j*2)].appendChild(el);
             }
         }
     }
@@ -104,10 +104,10 @@ function generatePuzzle() {
 
     drawOnGrid();
     
-    for(let i=0; i<answerEl.length; i++) {
-        const el = document.getElementById(`${answerEl[i]}`);
-        el.addEventListener('click', promptValue);
-    }
+    //for(let i=0; i<answerEl.length; i++) {
+    //    const el = document.getElementById(`${answerEl[i]}`);
+    //    el.addEventListener('click', promptValue);
+    //}
 }
 
 function resetPuzzle() {
