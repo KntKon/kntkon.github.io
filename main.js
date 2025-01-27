@@ -303,16 +303,16 @@ function download() {
         link.click();
         document.getElementById('imageDL').remove();
     });
-    html2canvas(answerEl).then(function(canvas) {
-        document.body.appendChild(canvas);
-        canvas.setAttribute('id', 'imageDL');
-        const image = canvas.toDataURL("image/png", 1.0);
-        const link = document.createElement("a");
-        link.download = `${randomNumber}_answer.png`;
-        link.href = image;
-        link.click();
-        document.getElementById('imageDL').remove();
-    });
+    //html2canvas(answerEl).then(function(canvas) {
+    //    document.body.appendChild(canvas);
+    //    canvas.setAttribute('id', 'imageDL');
+    //    const image = canvas.toDataURL("image/png", 1.0);
+    //    const link = document.createElement("a");
+    //    link.download = `${randomNumber}_answer.png`;
+    //    link.href = image;
+    //    link.click();
+    //    document.getElementById('imageDL').remove();
+    //});
 }
 
 function test(index) {

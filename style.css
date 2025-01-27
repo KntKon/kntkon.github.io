@@ -165,7 +165,7 @@ button.buttonsAnsw::after {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 1px;
+    top: 0;
     left: 0;
     content: attr(data-content);
     -webkit-text-stroke: 0px black;
@@ -182,6 +182,28 @@ button.buttonsAnsw:nth-child(5) {
 
 button.buttonsAnsw > img {
     vertical-align: top;
+}
+
+button#download {
+    position: absolute;
+    top: var(--unitOne);
+    right: var(--unitOne);
+
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    box-sizing: border-box;
+    
+    background-image: url('./img/fruits_alpha.png');
+    background-size: calc( var(--unitFour)*3 );
+
+    border: 0;
+    border-radius: var(--unitOne);
+    background-color: white;
+    box-shadow: 0 0 0 calc(var(--unitOne)/8) silver, 0 calc(var(--unitOne)/4) 0 calc(var(--unitOne)/8) silver;
+
+    padding: 0 !important;
+    cursor: pointer;
 }
 
 button.finish {
