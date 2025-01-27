@@ -112,15 +112,19 @@ function generatePuzzle() {
 
 function resetPuzzle() {
     
-    const ansButton = document.getElementsByClassName('answerButton');
-    const ansLength = ansButton.length;
-    for(let x=0; x<ansLength; x++) {
-        ansButton[0].remove();
-    }
-
     answers = [];
     populated = { Hor:[ 2, 2, 2 ], Ver:[ 2, 2, 2 ] };
     curPopulated = [];
+    values = [ [ 0, 0, 0 ], [ 0, 0, 0 ], [ 0, 0, 0 ] ];
+    
+    for(let x=0; x<answerEl.length; x++) {
+        const ansButton = document.getElementById(answerEl[x]);
+        ansButton.className = "grid";
+        ansButton.removeAttribute('onclick');
+        ansButton.removeAttribute('data-content');
+        ansButton.removeAttribute('id');
+    }
+
 
     for(let i=0; i<3; i++) {
         for(let j=0; j<3; j++) {
@@ -133,7 +137,15 @@ function resetPuzzle() {
     finishButton.setAttribute('data-content', 'Confirm');
     finishButton.setAttribute('onclick', `checkAnswers()`);
 
+    //checkup();
     generatePuzzle();
+}
+
+function checkup() {
+    console.log(answers);
+    console.log(populated);
+    console.log(curPopulated);
+    console.log(values);
 }
 
 function checkAnswers() {
