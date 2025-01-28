@@ -1,0 +1,303 @@
+let baseFruits = [];
+let fruits = [];
+let equations = [];
+let computed = [];
+
+let minNumber = 1;
+let maxNumber = 10;
+
+function genNum(min, max) {
+    const totalNumbers = max-min;
+    const number = Math.round(Math.random()*totalNumbers)+min;
+    return number;
+}
+
+function genMlt(level) {
+    let numbers = [];
+    switch(level) {
+        case 0:
+            numbers = [1,1,1,1,1,1,1,1,1,1, 2,2,2,2,2, 3];
+            break;
+        case 1:
+            numbers = [1,1,1,1,1, 2,2,2, 3];
+            break;
+        case 2:
+            numbers = [1, 2, 3];
+            break;
+        case 3:
+            numbers = [1, 2,2,2, 3,3,3,3,3];
+            break;
+        case 4:
+            numbers = [1, 2,2,2,2,2, 3,3,3,3,3,3,3,3,3,3];
+            break;
+    }
+
+    const number = Math.round(Math.random()*(numbers.length-1));
+    return numbers[number];
+}
+
+function genOpe(mode) {
+    let operations = [];
+    switch(mode) {
+        case 0:
+            operations = ['+'];
+            break;
+        case 1:
+            operations = ['+', '-'];
+            break;
+        case 2:
+            operations = ['+', '*'];
+            break;
+        case 3:
+            operations = ['+', '*', '-'];
+            break;
+        default:
+            return '+';
+    }
+    const number = Math.round(Math.random()*(operations.length-1));
+    return operations[number];
+}
+
+function pickFruits() {
+    let tempArray = [...baseFruits];
+    for(let n=0; n<3; n++) {
+        const totalNumbers = tempArray.length;
+        const number = genNum(0, (totalNumbers-1));
+        fruits.push(tempArray[number]);
+        tempArray.splice(number, 1);
+    }
+}
+
+function genFruits() {
+    baseFruits = [
+        { name: 'Watml', value: genNum(minNumber, maxNumber), id: 0 },
+        { name: 'Straw', value: genNum(minNumber, maxNumber), id: 1 },
+        { name: 'Banan', value: genNum(minNumber, maxNumber), id: 2 },
+        { name: 'Apple', value: genNum(minNumber, maxNumber), id: 3 },
+        { name: 'Lemon', value: genNum(minNumber, maxNumber), id: 4 },
+        { name: 'Ornge', value: genNum(minNumber, maxNumber), id: 5 },
+        { name: 'Grape', value: genNum(minNumber, maxNumber), id: 6 },
+        { name: 'Kiwis', value: genNum(minNumber, maxNumber), id: 7 },
+    ];
+}
+
+function gen1stEq(mltLevel, opeLevel) {
+    if(opeLevel == 0 || opeLevel == 2) opeLevel=0;
+    else opeLevel=1;
+    equations.push([]);
+    equations[0][0] = genMlt(mltLevel); equations[0][1] = 0; equations[0][2] = genOpe(opeLevel);
+    equations[0][3] = genMlt(mltLevel); equations[0][4] = 0; equations[0][5] = genOpe(opeLevel);
+    equations[0][6] = genMlt(mltLevel); equations[0][7] = 0; equations[0][8] = '=';
+}
+
+function gen2ndEq(mltLevel, opeLevel) {
+    const position = genNum(0, 2);
+    equations.push([]);
+    equations[1][0] = genMlt(mltLevel); equations[1][1] = 0; equations[1][2] = genOpe(opeLevel);
+    equations[1][3] = genMlt(mltLevel); equations[1][4] = 0; equations[1][5] = genOpe(opeLevel);
+    equations[1][6] = genMlt(mltLevel); equations[1][7] = 0; equations[1][8] = '=';
+    equations[1][(position*3+1)] = 1;
+}
+
+function gen3rdEq(mltLevel, opeLevel) {
+    const position = genNum(0, 2);
+    equations.push([]);
+    equations[2][0] = genMlt(mltLevel); equations[2][1] = 1; equations[2][2] = genOpe(opeLevel);
+    equations[2][3] = genMlt(mltLevel); equations[2][4] = 1; equations[2][5] = genOpe(opeLevel);
+    equations[2][6] = genMlt(mltLevel); equations[2][7] = 1; equations[2][8] = '=';
+    equations[2][(position*3+1)] = 2;
+}
+
+function gen4thEq(mltLevel, opeLevel) {
+    const threeFruits = genNum(0, 1);
+    if(threeFruits) {
+        let tempFruits = [0, 1, 2];
+        let fruitsOrder = [];
+        for(let n=0; n<3; n++) {
+            const number = genNum(0, tempFruits.length-1);
+            fruitsOrder.push(tempFruits[number]);
+            tempFruits.splice(number, 1);
+        }
+        equations.push([]);
+        equations[3][0] = genMlt(mltLevel); equations[3][1] = fruitsOrder[0]; equations[3][2] = genOpe(opeLevel);
+        equations[3][3] = genMlt(mltLevel); equations[3][4] = fruitsOrder[1]; equations[3][5] = genOpe(opeLevel);
+        equations[3][6] = genMlt(mltLevel); equations[3][7] = fruitsOrder[2]; equations[3][8] = '=';
+    } else {
+        const position = genNum(0, 2);
+        equations.push([]);
+        equations[3][0] = genMlt(mltLevel); equations[3][1] = 0; equations[3][2] = genOpe(opeLevel);
+        equations[3][3] = genMlt(mltLevel); equations[3][4] = 0; equations[3][5] = genOpe(opeLevel);
+        equations[3][6] = genMlt(mltLevel); equations[3][7] = 0; equations[3][8] = '=';
+        equations[3][(position*3+1)] = 2;
+    }
+}
+
+function computeEquations() {
+    const eq1 = equations[0]; const eq2 = equations[1]; const eq3 = equations[2]; const eq4 = equations[3];
+    const equation1 = `${eq1[0]}*${fruits[eq1[1]].value} ${eq1[2]} ${eq1[3]}*${fruits[eq1[4]].value} ${eq1[5]} ${eq1[6]}*${fruits[eq1[7]].value}`;
+    const equation2 = `${eq2[0]}*${fruits[eq2[1]].value} ${eq2[2]} ${eq2[3]}*${fruits[eq2[4]].value} ${eq2[5]} ${eq2[6]}*${fruits[eq2[7]].value}`;
+    const equation3 = `${eq3[0]}*${fruits[eq3[1]].value} ${eq3[2]} ${eq3[3]}*${fruits[eq3[4]].value} ${eq3[5]} ${eq3[6]}*${fruits[eq3[7]].value}`;
+    const equation4 = `${eq4[0]}*${fruits[eq4[1]].value} ${eq4[2]} ${eq4[3]}*${fruits[eq4[4]].value} ${eq4[5]} ${eq4[6]}*${fruits[eq4[7]].value}`;
+    computed.push(equation1, equation2, equation3, equation4);
+}
+
+// DONE
+function drawPuzzle() {
+
+    const elFruits = document.getElementsByClassName('puzzleFruits');
+    for(let i=0; i<elFruits.length-1; i++) {
+        const _mult = equations[Math.floor(i/3)][(i%3)*3];
+        const _id = equations[Math.floor(i/3)][(i%3)*3+1];
+        elFruits[i].classList.add(`fruit${fruits[_id].name}${_mult}`);
+    }
+
+    const elSigns = document.getElementsByClassName('puzzleSigns');
+    for(let i=0; i<elSigns.length; i++) {
+        let _sign = equations[Math.floor(i/3)][(i%3)*3+2];
+        if(_sign == "+")
+            _sign = 'signPlus';
+        else if(_sign == "-")
+            _sign = 'signMins';
+        else if(_sign == "=")
+            _sign = 'signEqul';
+        else if(_sign == "*")
+            _sign = 'signMult';
+        else if(_sign == "/")
+            _sign = 'signDivi';
+        else if(_sign == "?")
+            _sign = 'signQues';
+        else
+            _sign = 'signQues';
+        elSigns[i].classList.add(`${_sign}`);
+    }
+
+    let _values = [];
+    for(let i=0; i<3; i++){
+        const eq = `${eval(computed[i])}`;
+        _values.push( [] );
+        for(let n=0; n<eq.length; n++){
+            _values[i].push(eq[n]);
+        }
+    }
+
+    const elNumbers = document.getElementsByClassName('puzzleNumbers');
+    for(let i=0; i<elNumbers.length; i++) {
+        const _id = Math.floor(i/3);
+        const _data = i%3;
+        const _number = _values[_id][_data];
+        if(_number){
+            elNumbers[i].classList.add(`numb${_number}`);
+        } else {
+            elNumbers[i].classList.add(`numbN`);
+        }
+    }
+
+    const elAnsFruits = document.getElementsByClassName('answerFruits');
+    for(let i=0; i<elAnsFruits.length; i++) {
+        if(i<elAnsFruits.length-1)
+            elAnsFruits[i].classList.add(`fruit${fruits[i].name}1`);
+
+        elAnsFruits[i].setAttribute(`onclick`, `answerPrompt(${i})`);
+    }
+}
+
+// DONE
+function answerPrompt(_id) {
+    let elButtons = document.getElementsByClassName('answerFruits');
+    let answer = 0;
+    if(_id<3)
+        answer = window.prompt(`Fruit #${_id+1} is equal to ...`);
+    else
+        answer = window.prompt(`Total is equal to ...`);
+
+    if(answer != parseInt(answer))
+        answer = 0;
+    if(answer > 999)
+        answer = 999;
+    if(answer < -99)
+        answer = -99;
+
+    elButtons[_id].innerText = answer;
+    //elButtons[_id].setAttribute('data-content', `${parseInt(answer)}`);
+}
+
+// DONE
+function checkResults() {
+    const elButtons = document.getElementsByClassName('answerFruits');
+    fruits.push( { name:'total', value:eval(computed[elButtons.length-1]) } );
+    for(let i=0; i<elButtons.length; i++) {
+        const userInput = parseInt(elButtons[i].innerText);
+        const answer = fruits[i].value;
+        if(userInput == answer) {
+            elButtons[i].classList.add('correct');
+        } else {
+            elButtons[i].classList.add('incorrect');
+            elButtons[i].innerText = answer;
+        }
+    }
+
+    const button = document.getElementById('divAnswerFinal');
+    button.innerText = 'Play Again';
+    button.setAttribute('onclick', 'reload()');
+    //button.setAttribute('data-content', `Confirm`);
+}
+
+// DONE
+function resetButton() {
+    const elFruits = document.getElementsByClassName('puzzleFruits');
+    for(let i=0; i<elFruits.length-1; i++) {
+        elFruits[i].className = 'divFour puzzleFruits';
+    }
+
+    const elSigns = document.getElementsByClassName('puzzleSigns');
+    for(let i=0; i<elSigns.length; i++) {
+        elSigns[i].className = 'divTwo puzzleSigns';
+    }
+
+    const elNumbers = document.getElementsByClassName('puzzleNumbers');
+    for(let i=0; i<elNumbers.length; i++) {
+        elNumbers[i].className = 'divTwo puzzleNumbers';
+    }
+
+    const elAnsFruits = document.getElementsByClassName('answerFruits');
+    for(let i=0; i<elAnsFruits.length; i++) {
+        elAnsFruits[i].className = 'button answerFruits';
+        if(i<elAnsFruits.length-1)
+            elAnsFruits[i].classList.add('divAnswerFourSmall');
+        else
+            elAnsFruits[i].classList.add('divAnswerFourMedium');
+        elAnsFruits[i].setAttribute(`onclick`, ` `);
+        elAnsFruits[i].innerText = '';
+    }
+
+    const button = document.getElementById('divAnswerFinal');
+    button.innerText = 'Confirm';
+    button.setAttribute('onclick', `checkResults()`);
+    //button.setAttribute('data-content', `Confirm`);
+}
+
+// UNTOUCHED
+function reload() {
+    fruits=[]; equations=[]; computed=[]; baseFruits=[];
+    resetButton();
+    generatePuzzle();
+}
+
+// UNTOUCHED
+function generatePuzzle() {
+    genFruits();
+    pickFruits();
+
+    gen1stEq(0, 2);
+    gen2ndEq(0, 2);
+    gen3rdEq(0, 2);
+    gen4thEq(0, 2);
+
+    computeEquations();
+
+    if(eval(computed[0])>50 || eval(computed[1])>50 || eval(computed[2])>50 || eval(computed[3])>50) {
+        reload(); return;
+    }
+
+    drawPuzzle();
+}

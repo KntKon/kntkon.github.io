@@ -40,10 +40,6 @@
     box-shadow: 0 0 0 var(--border) var(--grey) inset;
 }
 
-.button:active {
-    box-shadow: 0 0 0 var(--border) var(--silver) inset;
-}
-
 .divAnswerFourSmall {
     width: var(--unitFour);
     height: var(--unitFour);
@@ -88,4 +84,14 @@
     line-height: var(--unitThree);
     font-size: var(--unitTwo);
     text-align: center;
+}
+
+.correct {
+    background-color: var(--lGreen) !important;
+    box-shadow: 0 0 0 var(--border) green inset !important;
+}
+
+.incorrect {
+    background-color: var(--lRed) !important;
+    box-shadow: 0 0 0 var(--border) var(--Red) inset !important;
 }

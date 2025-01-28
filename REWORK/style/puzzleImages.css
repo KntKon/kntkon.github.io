@@ -89,3 +89,4 @@
 .numb0 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 3 ); }
 .numbM { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 3 ); }
 .numbD { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 3 ); }
+.numbN { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 4 ); }
