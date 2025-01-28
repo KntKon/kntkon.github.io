@@ -1,3 +1,5 @@
+let curSelected;
+
 function goTo(page) {
     let path = `./${page}.html`;
     document.location.href = path;
@@ -20,4 +22,33 @@ function download() {
     });
     document.body.style.setProperty("--maxSize", "90vmin");
     document.body.style.setProperty("--border", "calc( var(--unitOne) / 4 )");
+}
+
+function openModal(type) {
+    const modal = document.getElementById('modal');
+    document.body.style.setProperty('--modalScale', '1');
+    if(type=='difficulty') {
+        const elSelected = document.getElementsByClassName('selected')[0].getAttribute('id');
+        curSelected = parseInt(elSelected[elSelected.length-1])-1;
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('modal');
+    document.body.style.setProperty('--modalScale', '0');
+}
+
+function selectDifficulty(id) {
+    const elDifficulty = document.getElementsByClassName('difficultyDiv');
+    elDifficulty[curSelected].classList.remove('selected');
+    elDifficulty[id].classList.add('selected');
+    curSelected = id;
+}
+
+function setDifficulty() {
+    difficulty = curSelected;
+    closeModal();
+
+    const buttonDifficulty = document.getElementById('difficulty');
+    buttonDifficulty.style.setProperty('background-position-x', `calc((0px - var(--unitFour)*${difficulty}))`);
 }

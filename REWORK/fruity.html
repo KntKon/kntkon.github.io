@@ -65,28 +65,28 @@
                     <div class="button answerFruits divAnswerFourMedium"></div>
                 </div>
                 <div class="row">
-                    <div class="button" id="divAnswerFinal" onclick="reload()">Start</div>
+                    <div class="button" id="divAnswerFinal" onclick="reload()">Play</div>
                 </div>
             </div>
         </div>
-        <!--
+        
         <div id="modal">
             <div class="row">
-                <div class="divFour difficultyDiv" id="difficulty1"></div>
-                <div class="divFour difficultyDiv" id="difficulty2"></div>
-                <div class="divFour difficultyDiv" id="difficulty3"></div>
-                <div class="divFour difficultyDiv" id="difficulty4"></div>
-                <div class="divFour difficultyDiv" id="difficulty5"></div>
+                <div onclick="selectDifficulty(0)" class="divFour difficultyDiv selected" id="difficulty1"></div>
+                <div onclick="selectDifficulty(1)" class="divFour difficultyDiv" id="difficulty2"></div>
+                <div onclick="selectDifficulty(2)" class="divFour difficultyDiv" id="difficulty3"></div>
+                <div onclick="selectDifficulty(3)" class="divFour difficultyDiv" id="difficulty4"></div>
+                <div onclick="selectDifficulty(4)" class="divFour difficultyDiv" id="difficulty5"></div>
             </div>
             <div class="row">
-                <div class="divButtonBig difficultyDiv" id="difficultyConfirm">Change Difficulty</div>
+                <div onclick="setDifficulty()" class="divButtonBig difficultyDiv" id="difficultyConfirm">Change Difficulty</div>
             </div>
         </div>
-        <div id="modalBackground"></div>
-        -->
+        <div onclick="closeModal()"  id="modalBackground"></div>
+        
         <div onclick="download()" id="download"></div>
         <div onclick="goTo('index')" id="home"></div>
-        <div id="difficulty"></div>
+        <div onclick="openModal('difficulty')" id="difficulty"></div>
 	</body>
 </html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>

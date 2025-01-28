@@ -46,6 +46,8 @@ body {
     --border:    calc( var(--unitOne) / 4 );
     --mBorder:   calc( 0px - ( var(--unitOne) / 4 ) );
 
+    --modalScale: 0;
+
     --contentHeight: calc( var(--maxSize) + ( var(--border) * 2 ) );
     --contentWidth: calc( var(--maxSize) + ( var(--border) * 2 ) );
 
@@ -108,7 +110,7 @@ body {
     border: var(--border) solid var(--grey);
 }
 
-#difficulty {
+#info {
     width: var(--unitFour);
     height: var(--unitFour);
 
@@ -116,8 +118,24 @@ body {
     top: calc( var(--unitOne) + var(--border) );
     right: calc( var(--unitOne) + var(--border) );
 
-    background-image: url('../img/icons/difficulty.png');
+    background-image: url('../img/icons/info.png');
     background-size: var(--unitFour);
+    background-color: var(--white);
+    border-radius: var(--unitOne);
+    border: var(--border) solid var(--grey);
+}
+
+#difficulty {
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    position: absolute;
+    top: calc( var(--unitOne) + var(--border) );
+    right: calc( var(--unitOne) + var(--border) );
+    
+    background-image: url('../img/games/difficulty.png');
+    background-size: calc( var(--unitFour) * 5 ) !important;
+
     background-color: var(--white);
     border-radius: var(--unitOne);
     border: var(--border) solid var(--grey);
@@ -140,18 +158,6 @@ body {
     text-align: center;
 }
 
-.difficultyDiv {
-    background-image: url('../img/games/difficulty.png');
-    background-size: calc( var(--unitFour) * 5 ) !important;
-    background-color: var(--silver) !important;
-    border-radius: var(--radius);
-    box-shadow: 0 0 0 var(--border) var(--grey) inset;
-
-    line-height: var(--unitFour);
-    font-size: var(--unitThree);
-    text-align: center;
-}
-
 .difficultyDiv:active {
     box-shadow: 0 0 0 var(--border) var(--silver) inset !important;
 }
@@ -160,14 +166,6 @@ body {
     margin-left: var(--unitOne);
 }
 
-/*
-    Dif1: operations => PLUS                || max numbers => 50    || min numbers => 1
-    Dif2: operations => PLUS & MULT         || max numbers => 99    || min numbers => 1
-    Dif3: operations => PLUS & MULT & MINS  || max numbers => 99    || min numbers => 1
-    Dif4: operations => PLUS & MULT & MINS  || max numbers => 99    || min numbers => -99
-    Dif5: operations => PLUS & MULT & MINS  || max numbers => 999   || min numbers => -99
-*/
-
 #difficulty1 { background-position-x: calc( ( 0px - var(--unitFour) * 0 ) ); }
 #difficulty2 { background-position-x: calc( ( 0px - var(--unitFour) * 1 ) ); }
 #difficulty3 { background-position-x: calc( ( 0px - var(--unitFour) * 2 ) ); }
@@ -175,6 +173,7 @@ body {
 #difficulty5 { background-position-x: calc( ( 0px - var(--unitFour) * 4 ) ); }
 
 #modal {
+    transform: scale( var(--modalScale) );
     width: calc( ( var(--unitFour) * 5 ) + ( var(--unitOne) * 4 ) );
     height: calc( var(--unitFour) + var(--unitThree) + var(--unitOne) );
     padding: var(--unitOne);
@@ -194,6 +193,7 @@ body {
 }
 
 #modalBackground {
+    transform: scale( var(--modalScale) );
     background-color: rgba(0,0,0, .5) !important;
     
     position: absolute;
@@ -324,78 +324,23 @@ body {
     text-align: center;
 }
 
-.puzzleFruits {
-    background-image: url('../img/games/fruits.png');
-    background-size: calc( var(--unitFour) * 3 );
-    background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 8 );
+.difficultyDiv {
+    background-image: url('../img/games/difficulty.png');
+    background-size: calc( var(--unitFour) * 5 ) !important;
+    background-color: var(--silver) !important;
+    border-radius: var(--radius);
+    box-shadow: 0 0 0 var(--border) var(--grey) inset;
+
+    line-height: var(--unitFour);
+    font-size: var(--unitThree);
+    text-align: center;
 }
 
-.puzzleSigns {
-    background-image: url('../img/games/signs.png');
-    background-size: calc( var(--unitTwo) * 3 );
-    background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 1 );
+.selected {
+    background-color: var(--lGreen) !important;
+    box-shadow: 0 0 0 var(--border) var(--Green) inset !important;
 }
 
-.puzzleNumbers {
-    background-image: url('../img/games/numbers.png');
-    background-size: calc( var(--unitTwo) * 3 );
-    background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 3 );
+.selected:active {
+    box-shadow: 0 0 0 var(--border) var(--Green) inset !important;
 }
-
-.answerFruits {
-    background-image: url('../img/games/fruits_alpha.png');
-    background-size: calc( var(--unitFour) * 3 );
-    background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 9 );
-}
-
-.answerFruits.divAnswerFourMedium {
-    background-position: calc( 0px - var(--unitOne) * 1.5 ) calc( 0px - var(--unitFour) * 8 );
-}
-
-.signPlus { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 0 ); }
-.signMins { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 0 ); }
-.signEqul { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 0 ); }
-.signMult { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 1 ); }
-.signDivi { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 1 ); }
-.signQues { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 1 ); }
-
-.numb1 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 0 ); }
-.numb2 { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 0 ); }
-.numb3 { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 0 ); }
-.numb4 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 1 ); }
-.numb5 { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 1 ); }
-.numb6 { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 1 ); }
-.numb7 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 2 ); }
-.numb8 { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 2 ); }
-.numb9 { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 2 ); }
-.numb0 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 3 ); }
-.numbM { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 3 ); }
-.numbD { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 3 ); }
-
-.fruitWatml1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 0 ); }
-.fruitWatml2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 0 ); }
-.fruitWatml3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 0 ); }
-.fruitStraw1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 1 ); }
-.fruitStraw2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 1 ); }
-.fruitStraw3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 1 ); }
-.fruitBanan1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 2 ); }
-.fruitBanan2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 2 ); }
-.fruitBanan3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 2 ); }
-.fruitApple1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 3 ); }
-.fruitApple2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 3 ); }
-.fruitApple3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 3 ); }
-.fruitLemon1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 4 ); }
-.fruitLemon2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 4 ); }
-.fruitLemon3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 4 ); }
-.fruitOrnge1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 5 ); }
-.fruitOrnge2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 5 ); }
-.fruitOrnge3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 5 ); }
-.fruitGrape1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 6 ); }
-.fruitGrape2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 6 ); }
-.fruitGrape3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 6 ); }
-.fruitKiwis1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 7 ); }
-.fruitKiwis2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 7 ); }
-.fruitKiwis3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 7 ); }
-.fruitAddon1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 8 ); }
-.fruitAddon2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 8 ); }
-.fruitAddon3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 8 ); }
