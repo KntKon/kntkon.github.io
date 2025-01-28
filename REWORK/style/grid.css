@@ -1,0 +1,66 @@
+#puzzle {
+    background-color: var(--white);
+    margin-bottom: var(--unitOne);
+
+    display: flex;
+    flex-wrap: wrap;
+
+    width: calc( var(--unitFour) * 5 );
+
+    box-shadow: 0 0 0 calc(0px - var(--mBorder) / 4 ) var(--black);
+}
+
+#userInterface {
+    background-color: var(--white);
+}
+
+#userInterface > .row > div + div {
+    margin-left: var(--unitOne);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button {
+    box-shadow: 0 0 0 var(--border) var(--grey) inset;
+}
+
+.button:active {
+    box-shadow: 0 0 0 var(--border) var(--silver) inset;
+}
+
+#divAnswerFinal {
+    width: calc( var(--maxSize) - ( var(--unitOne) * 2 ) );
+    height: var(--unitThree);
+
+    position: relative;
+
+    margin-top: var(--unitOne);
+    background-color: var(--silver);
+    border-radius: var(--radius);
+    
+    line-height: var(--unitThree);
+    font-size: var(--unitTwo);
+    text-align: center;
+}
+
+.grid {
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    box-shadow: 0 0 0 calc(0px - var(--mBorder) / 4 ) var(--black) inset;
+    background: var(--white);
+
+    line-height: var(--unitFour);
+    font-size: var(--unitTwo);
+    text-align: center;
+}
+.grid:nth-child(2n) {
+    background-color: var(--silver) !important;
+}
+
+.grid:nth-child(10n - 1), .grid:nth-child(10n - 3) {
+    background-color: var(--black) !important;
+}

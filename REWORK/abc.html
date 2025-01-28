@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>ABC - LogicLand</title>
+        <link rel="styleSheet" href="./style/main.css" />
+        <link rel="styleSheet" href="./style/abc.css" />
+        <link rel="styleSheet" href="./style/puzzleImages.css" />
+        <link rel="icon" type="image/x-icon" href="./img/icon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta charset="utf-8">
+	</head>
+	<body>
+        <div id="container">
+            <!-- ### -->
+            <div id="puzzle">
+                <div class="row">
+                    <div class="divFour puzzleLetter letterA"></div>
+                    <div class="divTwo puzzleSigns signPlus"></div>
+                    <div class="divFour puzzleLetter letterB"></div>
+                    <div class="divTwo puzzleSigns signEqul"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                </div>
+                <div class="row">
+                    <div class="divFour puzzleLetter letterA"></div>
+                    <div class="divTwo puzzleSigns signPlus"></div>
+                    <div class="divFour puzzleLetter letterC"></div>
+                    <div class="divTwo puzzleSigns signEqul"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                </div>
+                <div class="row">
+                    <div class="divFour puzzleLetter letterB"></div>
+                    <div class="divTwo puzzleSigns signPlus"></div>
+                    <div class="divFour puzzleLetter letterC"></div>
+                    <div class="divTwo puzzleSigns signEqul"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                </div>
+            </div>
+            <div id="userInterface">
+                <div class="row">
+                    <div class="button answerLetters letterA divAnswerFourSmall"></div>
+                    <div class="button answerLetters letterB divAnswerFourSmall"></div>
+                    <div class="button answerLetters letterC divAnswerFourSmall"></div>
+                </div>
+                <div class="row">
+                    <div class="button" id="divAnswerFinal">Confirm</div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div id="modal">
+            <div class="row">
+                <div class="divFour difficultyDiv" id="difficulty1"></div>
+                <div class="divFour difficultyDiv" id="difficulty2"></div>
+                <div class="divFour difficultyDiv" id="difficulty3"></div>
+                <div class="divFour difficultyDiv" id="difficulty4"></div>
+                <div class="divFour difficultyDiv" id="difficulty5"></div>
+            </div>
+            <div class="row">
+                <div class="divButtonBig difficultyDiv" id="difficultyConfirm">Change Difficulty</div>
+            </div>
+        </div>
+        <div id="modalBackground"></div>
+        -->
+        <div onclick="download()" id="download"></div>
+        <div onclick="goTo('index')" id="home"></div>
+        <div id="difficulty"></div>
+	</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="./script/main.js"></script>
+<script src="./script/abc.js"></script>

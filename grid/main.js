@@ -167,7 +167,7 @@ function download() {
         link.click();
         document.getElementById('imageDL').remove();
     });
-    document.body.style.setProperty("--maxSize", "82.76vmin");
+    document.body.style.setProperty("--maxSize", "90vmin");
 }
 
 function goBack() {

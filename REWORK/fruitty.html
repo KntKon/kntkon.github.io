@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>NoName - LogicLand</title>
+        <link rel="styleSheet" href="./style/main.css" />
+        <link rel="styleSheet" href="./style/fruitty.css" />
+        <link rel="styleSheet" href="./style/puzzleImages.css" />
+        <link rel="icon" type="image/x-icon" href="./img/icon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta charset="utf-8">
+	</head>
+	<body>
+        <div id="container">
+            <!-- ### -->
+            <div id="puzzle">
+                <div class="row">
+                    <div class="divFour puzzleFruits fruitTest1"></div>
+                    <div class="divTwo puzzleSigns"></div>
+                    <div class="divFour puzzleFruits fruitTest2"></div>
+                    <div class="divTwo puzzleSigns"></div>
+                    <div class="divFour puzzleFruits fruitTest3"></div>
+                    <div class="divTwo puzzleSigns signEqul"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                </div>
+                <div class="row">
+                    <div class="divFour puzzleFruits"></div>
+                    <div class="divTwo puzzleSigns"></div>
+                    <div class="divFour puzzleFruits"></div>
+                    <div class="divTwo puzzleSigns"></div>
+                    <div class="divFour puzzleFruits"></div>
+                    <div class="divTwo puzzleSigns signEqul"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                </div>
+                <div class="row">
+                    <div class="divFour puzzleFruits"></div>
+                    <div class="divTwo puzzleSigns"></div>
+                    <div class="divFour puzzleFruits"></div>
+                    <div class="divTwo puzzleSigns"></div>
+                    <div class="divFour puzzleFruits"></div>
+                    <div class="divTwo puzzleSigns signEqul"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                    <div class="divTwo puzzleNumbers"></div>
+                </div>
+                <div class="row">
+                    <div class="divFour puzzleFruits"></div>
+                    <div class="divTwo puzzleSigns"></div>
+                    <div class="divFour puzzleFruits"></div>
+                    <div class="divTwo puzzleSigns"></div>
+                    <div class="divFour puzzleFruits"></div>
+                    <div class="divTwo puzzleSigns signEqul"></div>
+                    <div class="divFour puzzleFruits fruitAddon1"></div>
+                </div>
+            </div>
+            <div id="userInterface">
+                <div class="row">
+                    <div class="button answerFruits divAnswerFourSmall"></div>
+                    <div class="button answerFruits divAnswerFourSmall"></div>
+                    <div class="button answerFruits divAnswerFourSmall"></div>
+                    <div class="button answerFruits divAnswerFourMedium"></div>
+                </div>
+                <div class="row">
+                    <div class="button" id="divAnswerFinal">Confirm</div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div id="modal">
+            <div class="row">
+                <div class="divFour difficultyDiv" id="difficulty1"></div>
+                <div class="divFour difficultyDiv" id="difficulty2"></div>
+                <div class="divFour difficultyDiv" id="difficulty3"></div>
+                <div class="divFour difficultyDiv" id="difficulty4"></div>
+                <div class="divFour difficultyDiv" id="difficulty5"></div>
+            </div>
+            <div class="row">
+                <div class="divButtonBig difficultyDiv" id="difficultyConfirm">Change Difficulty</div>
+            </div>
+        </div>
+        <div id="modalBackground"></div>
+        -->
+        <div onclick="download()" id="download"></div>
+        <div onclick="goTo('index')" id="home"></div>
+        <div id="difficulty"></div>
+	</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="./script/main.js"></script>
+<script src="./script/fruitty.js"></script>

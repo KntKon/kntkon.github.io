@@ -1,0 +1,395 @@
+@font-face {
+    font-family: "GenJyuu";
+    src:
+        url("../font/GenJyuu.ttf") format("truetype");
+}
+
+*{ touch-action: manipulation; }
+button { border: 0; }
+
+#knt {
+    width: 100%;
+    height: var(--unitFour);
+    margin-bottom: calc( var(--unitOne) * 1.5 );
+    margin-top: calc( var(--unitOne) * 1 );
+
+    /* background-image: url('./img/knt.png'); */
+    background-position: center center;
+    background-size: calc( var(--unitFour) * 2 );
+    background-repeat: no-repeat;
+
+    text-align: center;
+    line-height: var(--unitFour);
+    font-size: var(--unitThree);
+}
+
+body {
+    --white:  rgb(255, 255, 255);
+    --silver: rgb(240, 240, 240);
+    --grey:   rgb(190, 190, 190);
+    --black:  rgb( 69,  72,  73);
+
+    --maxSize:   90vmin;
+
+    --unitOne:   calc( var(--maxSize) / 27 );
+    --unitTwo:   calc( var(--unitOne) * 2 );
+    --unitThree: calc( var(--unitOne) * 3 );
+    --unitFour:  calc( var(--unitOne) * 4 );
+
+    --radius:    calc( var(--unitOne) / 2 );
+    --border:    calc( var(--unitOne) / 4 );
+    --mBorder:   calc( 0px - ( var(--unitOne) / 4 ) );
+
+    --contentHeight: calc( var(--maxSize) + ( var(--border) * 2 ) );
+    --contentWidth: calc( var(--maxSize) + ( var(--border) * 2 ) );
+
+    font-family: "GenJyuu";
+    background-image: url('../img/background.png');
+    background-size: calc( var(--maxSize) / 2 );
+    background-color: var(--white);
+    color: var(--black);
+
+    margin: 0 !important;
+    padding: 0 !important;
+    user-select: none !important;
+}
+
+#container {
+    width: calc( var(--maxSize) - var(--unitTwo) );
+    height: calc( var(--maxSize) - var(--unitTwo) );
+    padding: var(--unitOne);
+
+    position: absolute;
+    top: calc( ( 100% - var(--contentHeight) ) / 2 );
+    left: calc( ( 100% - var(--contentWidth) ) / 2 );
+
+    background-color: var(--white);
+    border-radius: var(--unitOne);
+    border: var(--border) solid var(--grey);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#download {
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    position: absolute;
+    bottom: calc( var(--unitOne) + var(--border) );
+    right: calc( var(--unitOne) + var(--border) );
+
+    background-image: url('../img/icons/save.png');
+    background-size: var(--unitFour);
+    background-color: var(--white);
+    border-radius: var(--unitOne);
+    border: var(--border) solid var(--grey);
+}
+
+#home {
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    position: absolute;
+    bottom: calc( var(--unitOne) + var(--border) );
+    left: calc( var(--unitOne) + var(--border) );
+
+    background-image: url('../img/icons/back.png');
+    background-size: var(--unitFour);
+    background-color: var(--white);
+    border-radius: var(--unitOne);
+    border: var(--border) solid var(--grey);
+}
+
+#difficulty {
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    position: absolute;
+    top: calc( var(--unitOne) + var(--border) );
+    right: calc( var(--unitOne) + var(--border) );
+
+    background-image: url('../img/icons/difficulty.png');
+    background-size: var(--unitFour);
+    background-color: var(--white);
+    border-radius: var(--unitOne);
+    border: var(--border) solid var(--grey);
+}
+
+#difficultyConfirm {
+    width: calc( ( var(--unitFour) * 5 ) + ( var(--unitOne) * 4 ) );
+    height: var(--unitThree);
+
+    position: relative;
+
+    margin-top: var(--unitOne);
+    background-image: none;
+    background-color: var(--silver) !important;
+    border-radius: var(--radius);
+    box-shadow: 0 0 0 var(--border) var(--grey) inset;
+    
+    line-height: var(--unitThree);
+    font-size: var(--unitTwo);
+    text-align: center;
+}
+
+.difficultyDiv {
+    background-image: url('../img/games/difficulty.png');
+    background-size: calc( var(--unitFour) * 5 ) !important;
+    background-color: var(--silver) !important;
+    border-radius: var(--radius);
+    box-shadow: 0 0 0 var(--border) var(--grey) inset;
+
+    line-height: var(--unitFour);
+    font-size: var(--unitThree);
+    text-align: center;
+}
+
+.difficultyDiv:active {
+    box-shadow: 0 0 0 var(--border) var(--silver) inset !important;
+}
+
+.difficultyDiv + .difficultyDiv {
+    margin-left: var(--unitOne);
+}
+
+/*
+    Dif1: operations => PLUS                || max numbers => 50    || min numbers => 1
+    Dif2: operations => PLUS & MULT         || max numbers => 99    || min numbers => 1
+    Dif3: operations => PLUS & MULT & MINS  || max numbers => 99    || min numbers => 1
+    Dif4: operations => PLUS & MULT & MINS  || max numbers => 99    || min numbers => -99
+    Dif5: operations => PLUS & MULT & MINS  || max numbers => 999   || min numbers => -99
+*/
+
+#difficulty1 { background-position-x: calc( ( 0px - var(--unitFour) * 0 ) ); }
+#difficulty2 { background-position-x: calc( ( 0px - var(--unitFour) * 1 ) ); }
+#difficulty3 { background-position-x: calc( ( 0px - var(--unitFour) * 2 ) ); }
+#difficulty4 { background-position-x: calc( ( 0px - var(--unitFour) * 3 ) ); }
+#difficulty5 { background-position-x: calc( ( 0px - var(--unitFour) * 4 ) ); }
+
+#modal {
+    width: calc( ( var(--unitFour) * 5 ) + ( var(--unitOne) * 4 ) );
+    height: calc( var(--unitFour) + var(--unitThree) + var(--unitOne) );
+    padding: var(--unitOne);
+
+    position: absolute;
+    top: calc( ( 100% - ( var(--unitFour) + var(--unitThree) + ( var(--unitOne) * 3 ) + ( var(--border) * 2 ) ) ) / 2 );
+    left: calc( ( 100% - ( ( var(--unitFour) * 5 ) + ( var(--unitOne) * 6 ) + ( var(--border) * 2 ) ) ) / 2 );
+
+    background-color: var(--white);
+    border-radius: var(--radius);
+    border: var(--border) solid var(--grey);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 999;
+}
+
+#modalBackground {
+    background-color: rgba(0,0,0, .5) !important;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 500;
+}
+
+#puzzle {
+    background-color: var(--white);
+    margin-bottom: var(--unitOne);
+}
+
+#userInterface {
+    background-color: var(--white);
+}
+
+#userInterface > .row > div + div {
+    margin-left: var(--unitOne);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.divFour {
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    position: relative;
+
+    background-size: var(--unitFour);
+    background-color: var(--white);
+}
+
+.divTwo {
+    width: var(--unitTwo);
+    height: var(--unitFour);
+
+    position: relative;
+
+    background-size: var(--unitTwo);
+    background-color: var(--white);
+}
+
+.button {
+    box-shadow: 0 0 0 var(--border) var(--grey) inset;
+}
+
+.button:active {
+    box-shadow: 0 0 0 var(--border) var(--silver) inset;
+}
+
+.divMain {
+    width: calc( var(--unitOne) * 5.5 );
+    height: calc( var(--unitOne) * 5.5 );
+
+    position: relative;
+
+    background-size: calc( var(--unitOne) * 4.5 );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--silver);
+    border-radius: var(--radius);
+
+    
+    line-height: calc( var(--unitOne) * 5.5 );
+    font-size: var(--unitFour);
+    text-align: center;
+    margin-bottom: var(--unitOne);
+}
+
+#homeFruitty { background-image: url('../img/menu/fruits.png'); }
+#homeAbc { background-image: url('../img/menu/ABCs.png'); }
+#homeGrid { background-image: url('../img/menu/grid.png'); }
+#homeNull { background-image: url('../img/menu/none.png'); }
+
+.divMain:nth-child(4n+1) {
+    margin-left: 0 !important;
+}
+
+.divAnswerFourSmall {
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    position: relative;
+
+    background-size: var(--unitFour);
+    background-color: var(--silver);
+    border-radius: var(--radius);
+
+    
+    line-height: var(--unitFour);
+    font-size: var(--unitTwo);
+    text-align: center;
+}
+
+.divAnswerFourMedium {
+    width: calc( var(--unitFour) * 2 + var(--unitOne) );
+    height: var(--unitFour);
+
+    position: relative;
+
+    background-size: var(--unitFour);
+    background-color: var(--silver);
+    border-radius: var(--radius);
+
+    line-height: var(--unitFour);
+    font-size: var(--unitTwo);
+    text-align: center;
+}
+
+#divAnswerFinal {
+    width: calc( 100% );
+    height: var(--unitThree);
+
+    position: relative;
+
+    margin-top: var(--unitOne);
+    background-color: var(--silver);
+    border-radius: var(--radius);
+    
+    line-height: var(--unitThree);
+    font-size: var(--unitTwo);
+    text-align: center;
+}
+
+.puzzleFruits {
+    background-image: url('../img/games/fruits.png');
+    background-size: calc( var(--unitFour) * 3 );
+    background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 8 );
+}
+
+.puzzleSigns {
+    background-image: url('../img/games/signs.png');
+    background-size: calc( var(--unitTwo) * 3 );
+    background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 1 );
+}
+
+.puzzleNumbers {
+    background-image: url('../img/games/numbers.png');
+    background-size: calc( var(--unitTwo) * 3 );
+    background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 3 );
+}
+
+.answerFruits {
+    background-image: url('../img/games/fruits_alpha.png');
+    background-size: calc( var(--unitFour) * 3 );
+    background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 9 );
+}
+
+.answerFruits.divAnswerFourMedium {
+    background-position: calc( 0px - var(--unitOne) * 1.5 ) calc( 0px - var(--unitFour) * 8 );
+}
+
+.signPlus { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 0 ); }
+.signMins { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 0 ); }
+.signEqul { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 0 ); }
+.signMult { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 1 ); }
+.signDivi { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 1 ); }
+.signQues { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 1 ); }
+
+.numb1 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 0 ); }
+.numb2 { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 0 ); }
+.numb3 { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 0 ); }
+.numb4 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 1 ); }
+.numb5 { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 1 ); }
+.numb6 { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 1 ); }
+.numb7 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 2 ); }
+.numb8 { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 2 ); }
+.numb9 { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 2 ); }
+.numb0 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 3 ); }
+.numbM { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 3 ); }
+.numbD { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 3 ); }
+
+.fruitWatml1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 0 ); }
+.fruitWatml2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 0 ); }
+.fruitWatml3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 0 ); }
+.fruitStraw1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 1 ); }
+.fruitStraw2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 1 ); }
+.fruitStraw3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 1 ); }
+.fruitBanan1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 2 ); }
+.fruitBanan2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 2 ); }
+.fruitBanan3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 2 ); }
+.fruitApple1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 3 ); }
+.fruitApple2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 3 ); }
+.fruitApple3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 3 ); }
+.fruitLemon1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 4 ); }
+.fruitLemon2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 4 ); }
+.fruitLemon3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 4 ); }
+.fruitOrnge1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 5 ); }
+.fruitOrnge2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 5 ); }
+.fruitOrnge3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 5 ); }
+.fruitGrape1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 6 ); }
+.fruitGrape2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 6 ); }
+.fruitGrape3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 6 ); }
+.fruitKiwis1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 7 ); }
+.fruitKiwis2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 7 ); }
+.fruitKiwis3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 7 ); }
+.fruitAddon1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 8 ); }
+.fruitAddon2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 8 ); }
+.fruitAddon3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 8 ); }

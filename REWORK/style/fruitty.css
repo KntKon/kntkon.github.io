@@ -1,0 +1,91 @@
+#puzzle {
+    background-color: var(--white);
+    margin-bottom: var(--unitOne);
+}
+
+#userInterface {
+    background-color: var(--white);
+}
+
+#userInterface > .row > div + div {
+    margin-left: var(--unitOne);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.divFour {
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    position: relative;
+
+    background-size: var(--unitFour);
+    background-color: var(--white);
+}
+
+.divTwo {
+    width: var(--unitTwo);
+    height: var(--unitFour);
+
+    position: relative;
+
+    background-size: var(--unitTwo);
+    background-color: var(--white);
+}
+
+.button {
+    box-shadow: 0 0 0 var(--border) var(--grey) inset;
+}
+
+.button:active {
+    box-shadow: 0 0 0 var(--border) var(--silver) inset;
+}
+
+.divAnswerFourSmall {
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    position: relative;
+
+    background-size: var(--unitFour);
+    background-color: var(--silver);
+    border-radius: var(--radius);
+
+    
+    line-height: var(--unitFour);
+    font-size: var(--unitTwo);
+    text-align: center;
+}
+
+.divAnswerFourMedium {
+    width: calc( var(--unitFour) * 2 + var(--unitOne) );
+    height: var(--unitFour);
+
+    position: relative;
+
+    background-size: var(--unitFour);
+    background-color: var(--silver);
+    border-radius: var(--radius);
+
+    line-height: var(--unitFour);
+    font-size: var(--unitTwo);
+    text-align: center;
+}
+
+#divAnswerFinal {
+    width: calc( 100% );
+    height: var(--unitThree);
+
+    position: relative;
+
+    margin-top: var(--unitOne);
+    background-color: var(--silver);
+    border-radius: var(--radius);
+    
+    line-height: var(--unitThree);
+    font-size: var(--unitTwo);
+    text-align: center;
+}

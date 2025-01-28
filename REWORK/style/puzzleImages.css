@@ -1,0 +1,91 @@
+.puzzleFruits {
+    background-image: url('../img/games/fruits.png');
+    background-size: calc( var(--unitFour) * 3 );
+    background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 8 );
+}
+
+.puzzleLetter {
+    background-image: url('../img/games/letters.png');
+    background-size: calc( var(--unitFour) * 4 );
+    background-position: calc( 0px - var(--unitFour) * 3 ) 0;
+}
+
+.puzzleSigns {
+    background-image: url('../img/games/signs.png');
+    background-size: calc( var(--unitTwo) * 3 );
+    background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 1 );
+}
+
+.puzzleNumbers {
+    background-image: url('../img/games/numbers.png');
+    background-size: calc( var(--unitTwo) * 3 );
+    background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 3 );
+}
+
+.answerFruits {
+    background-image: url('../img/games/fruits_alpha.png');
+    background-size: calc( var(--unitFour) * 3 );
+    background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 9 );
+}
+
+.answerLetters {
+    background-image: url('../img/games/letters_alpha.png');
+    background-size: calc( var(--unitFour) * 4 );
+    background-position: calc( 0px - var(--unitFour) * 3 ) 0;
+}
+
+.answerFruits.divAnswerFourMedium {
+    background-position: calc( 0px - var(--unitOne) * 1.5 ) calc( 0px - var(--unitFour) * 8 );
+}
+
+.fruitWatml1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 0 ); }
+.fruitWatml2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 0 ); }
+.fruitWatml3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 0 ); }
+.fruitStraw1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 1 ); }
+.fruitStraw2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 1 ); }
+.fruitStraw3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 1 ); }
+.fruitBanan1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 2 ); }
+.fruitBanan2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 2 ); }
+.fruitBanan3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 2 ); }
+.fruitApple1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 3 ); }
+.fruitApple2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 3 ); }
+.fruitApple3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 3 ); }
+.fruitLemon1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 4 ); }
+.fruitLemon2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 4 ); }
+.fruitLemon3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 4 ); }
+.fruitOrnge1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 5 ); }
+.fruitOrnge2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 5 ); }
+.fruitOrnge3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 5 ); }
+.fruitGrape1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 6 ); }
+.fruitGrape2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 6 ); }
+.fruitGrape3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 6 ); }
+.fruitKiwis1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 7 ); }
+.fruitKiwis2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 7 ); }
+.fruitKiwis3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 7 ); }
+.fruitAddon1 { background-position: calc( 0px - var(--unitFour) * 0 ) calc( 0px - var(--unitFour) * 8 ); }
+.fruitAddon2 { background-position: calc( 0px - var(--unitFour) * 1 ) calc( 0px - var(--unitFour) * 8 ); }
+.fruitAddon3 { background-position: calc( 0px - var(--unitFour) * 2 ) calc( 0px - var(--unitFour) * 8 ); }
+
+.letterA { background-position: calc( 0px - var(--unitFour) * 0 ) 0; }
+.letterB { background-position: calc( 0px - var(--unitFour) * 1 ) 0; }
+.letterC { background-position: calc( 0px - var(--unitFour) * 2 ) 0; }
+
+.signPlus { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 0 ); }
+.signMins { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 0 ); }
+.signEqul { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 0 ); }
+.signMult { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 1 ); }
+.signDivi { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 1 ); }
+.signQues { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 1 ); }
+
+.numb1 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 0 ); }
+.numb2 { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 0 ); }
+.numb3 { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 0 ); }
+.numb4 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 1 ); }
+.numb5 { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 1 ); }
+.numb6 { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 1 ); }
+.numb7 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 2 ); }
+.numb8 { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 2 ); }
+.numb9 { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 2 ); }
+.numb0 { background-position: calc( 0px - var(--unitTwo) * 0 ) calc( 0px - var(--unitFour) * 3 ); }
+.numbM { background-position: calc( 0px - var(--unitTwo) * 1 ) calc( 0px - var(--unitFour) * 3 ); }
+.numbD { background-position: calc( 0px - var(--unitTwo) * 2 ) calc( 0px - var(--unitFour) * 3 ); }
