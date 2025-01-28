@@ -4,7 +4,7 @@
         url("../font/GenJyuu.ttf") format("truetype");
 }
 
-*{ touch-action: manipulation; }
+*{ touch-action: manipulation; -webkit-text-size-adjust: 100%; }
 button { border: 0; }
 
 #knt {
