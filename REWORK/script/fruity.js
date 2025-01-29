@@ -1,11 +1,13 @@
 let baseFruits, fruits, equations, computed = [];
-let minNumber, maxNumber, maxGenNumber;
+let minNumber, maxNumber, minGenNumber, maxGenNumber;
 let difficulty = 0;
 
 // DONE
 function genNum(min, max) {
     const totalNumbers = Math.floor(max-min);
-    const number = Math.floor(Math.random()*totalNumbers)+Math.floor(min);
+    let number = Math.floor(Math.random()*totalNumbers)+Math.floor(min);
+    if(number == 0) { number = 1; }
+
     return number;
 }
 
@@ -63,26 +65,31 @@ function genMinMax(_difficulty) {
         case 0:     // EASY
             minNumber = 1;
             maxNumber = 30;
+            minGenNumber = 1;
             maxGenNumber = 30;
             break;
         case 1:     // BEGINER
             minNumber = 1;
             maxNumber = 99;
-            maxGenNumber = 50;
+            minGenNumber = 1;
+            maxGenNumber = 48;
             break;
         case 2:     // MEDIUM
             minNumber = 1;
             maxNumber = 99;
-            maxGenNumber = 99;
+            minGenNumber = -10;
+            maxGenNumber = 48;
             break;
         case 3:     // HARD
             minNumber = -99;
             maxNumber = 99;
-            maxGenNumber = 99;
+            minGenNumber = -48;
+            maxGenNumber = 48;
             break;
         case 4:     // EXPERT
             minNumber = -99;
             maxNumber = 999;
+            minGenNumber = -48;
             maxGenNumber = 99;
             break;
     }
@@ -102,14 +109,14 @@ function pickFruits() {
 // DONE
 function genFruits() {
     baseFruits = [
-        { name: 'Watml', value: genNum(minNumber, maxGenNumber), id: 0 },
-        { name: 'Straw', value: genNum(minNumber, maxGenNumber), id: 1 },
-        { name: 'Banan', value: genNum(minNumber, maxGenNumber), id: 2 },
-        { name: 'Apple', value: genNum(minNumber, maxGenNumber), id: 3 },
-        { name: 'Lemon', value: genNum(minNumber, maxGenNumber), id: 4 },
-        { name: 'Ornge', value: genNum(minNumber, maxGenNumber), id: 5 },
-        { name: 'Grape', value: genNum(minNumber, maxGenNumber), id: 6 },
-        { name: 'Kiwis', value: genNum(minNumber, maxGenNumber), id: 7 },
+        { name: 'Watml', value: genNum(minGenNumber, maxGenNumber), id: 0 },
+        { name: 'Straw', value: genNum(minGenNumber, maxGenNumber), id: 1 },
+        { name: 'Banan', value: genNum(minGenNumber, maxGenNumber), id: 2 },
+        { name: 'Apple', value: genNum(minGenNumber, maxGenNumber), id: 3 },
+        { name: 'Lemon', value: genNum(minGenNumber, maxGenNumber), id: 4 },
+        { name: 'Ornge', value: genNum(minGenNumber, maxGenNumber), id: 5 },
+        { name: 'Grape', value: genNum(minGenNumber, maxGenNumber), id: 6 },
+        { name: 'Kiwis', value: genNum(minGenNumber, maxGenNumber), id: 7 },
     ];
 }
 
@@ -146,12 +153,12 @@ function gen3rdEq(_difficulty) {
 
 // DONE
 function gen4thEq(_difficulty) {
-    const threeFruits = genNum(0, 1);
+    const threeFruits = genNum(1, 2)-1;
     if(threeFruits) {
         let tempFruits = [0, 1, 2];
         let fruitsOrder = [];
         for(let n=0; n<3; n++) {
-            const number = genNum(0, tempFruits.length-1);
+            const number = genNum(1, tempFruits.length)-1;
             fruitsOrder.push(tempFruits[number]);
             tempFruits.splice(number, 1);
         }
@@ -160,7 +167,7 @@ function gen4thEq(_difficulty) {
         equations[3][3] = genMlt(_difficulty); equations[3][4] = fruitsOrder[1]; equations[3][5] = genOpe(_difficulty);
         equations[3][6] = genMlt(_difficulty); equations[3][7] = fruitsOrder[2]; equations[3][8] = '=';
     } else {
-        const position = genNum(0, 2);
+        const position = genNum(1, 3)-1;
         equations.push([]);
         equations[3][0] = genMlt(_difficulty); equations[3][1] = 0; equations[3][2] = genOpe(_difficulty);
         equations[3][3] = genMlt(_difficulty); equations[3][4] = 0; equations[3][5] = genOpe(_difficulty);
@@ -334,12 +341,11 @@ function generatePuzzle() {
 
     computeEquations();
 
-    if(eval(computed[0])>maxNumber || eval(computed[1])>maxNumber || eval(computed[2])>maxNumber || eval(computed[3])>maxNumber) {
-        reload(); return;
-    }
-    if(eval(computed[0])<minNumber || eval(computed[1])<minNumber || eval(computed[2])<minNumber || eval(computed[3])<minNumber) {
-        reload(); return;
-    }
+    if(eval(computed[0])>maxNumber || eval(computed[1])>maxNumber || eval(computed[2])>maxNumber || eval(computed[3])>maxNumber) { reload(); return; }
+    if(eval(computed[0])<minNumber || eval(computed[1])<minNumber || eval(computed[2])<minNumber || eval(computed[3])<minNumber) { reload(); return; }
+    if( eval(computed[0]) != Math.floor(eval(computed[0])) || eval(computed[1]) != Math.floor(eval(computed[1])) ) { reload(); return; }
+    if( eval(computed[2]) != Math.floor(eval(computed[2])) || eval(computed[3]) != Math.floor(eval(computed[3])) ) { reload(); return; }
+
 
     drawPuzzle();
 }

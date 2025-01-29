@@ -8,8 +8,16 @@ function goTo(page) {
 function download() {
     const puzzleEl = document.getElementById('container');
     const randomNumber = Math.floor( Math.random() * 1000000000 );
+    const divAnswerFinal = document.getElementById('divAnswerFinal');
+    const _difficulties = [ '☙ ★☆☆☆☆ ❧', '☙ ★★☆☆☆ ❧', '☙ ★★★☆☆ ❧', '☙ ★★★★☆ ❧', '🙥 ⭑✯⭑♕⭑✯⭑ 🙧' ];
+
+    const oldText = divAnswerFinal.innerText;
+    divAnswerFinal.innerText = `${_difficulties[difficulty]}`;
+
     document.body.style.setProperty("--border", "none");
     document.body.style.setProperty("--maxSize", "1012.5px");
+
+
     html2canvas(puzzleEl).then(function(canvas) {
         document.body.appendChild(canvas);
         canvas.setAttribute('id', 'imageDL');
@@ -20,6 +28,9 @@ function download() {
         link.click();
         document.getElementById('imageDL').remove();
     });
+
+
+    divAnswerFinal.innerText = oldText;
     document.body.style.setProperty("--maxSize", "90vmin");
     document.body.style.setProperty("--border", "calc( var(--unitOne) / 4 )");
 }
