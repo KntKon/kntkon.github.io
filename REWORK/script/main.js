@@ -9,7 +9,7 @@ function download() {
     const puzzleEl = document.getElementById('container');
     const randomNumber = Math.floor( Math.random() * 1000000000 );
     const divAnswerFinal = document.getElementById('divAnswerFinal');
-    const _difficulties = [ '☙ ★☆☆☆☆ ❧', '☙ ★★☆☆☆ ❧', '☙ ★★★☆☆ ❧', '☙ ★★★★☆ ❧', '🙥 ⭑✯⭑♕⭑✯⭑ 🙧' ];
+    const _difficulties = [ '~ ★ ~', '~ ★★ ~', '~ ★★★ ~', '~ ★★★★ ~', '~ ✯✯✯✯✯ ~' ];
 
     const oldText = divAnswerFinal.innerText;
     divAnswerFinal.innerText = `${_difficulties[difficulty]}`;
