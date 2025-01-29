@@ -38,16 +38,6 @@
 
 .button {
     box-shadow: 0 0 0 var(--border) var(--grey) inset;
-    color: var(--black);
-    text-shadow:
-        0.05em 0 var(--silver),
-        0 0.05em var(--silver),
-        -0.05em 0 var(--silver),
-        0 -0.05em var(--silver),
-        -0.03em -0.03em var(--silver),
-        -0.03em 0.03em var(--silver),
-        0.03em -0.03em var(--silver),
-        0.03em 0.03em var(--silver);
 }
 
 .divAnswerFourSmall {
@@ -63,6 +53,17 @@
     line-height: var(--unitFour);
     font-size: var(--unitTwo);
     text-align: center;
+
+    color: var(--white);
+    text-shadow:
+        0.05em 0 var(--black),
+        0 0.05em var(--black),
+        -0.05em 0 var(--black),
+        0 -0.05em var(--black),
+        -0.03em -0.03em var(--black),
+        -0.03em 0.03em var(--black),
+        0.03em -0.03em var(--black),
+        0.03em 0.03em var(--black);
 }
 
 .divAnswerFourMedium {
@@ -78,6 +79,17 @@
     line-height: var(--unitFour);
     font-size: var(--unitTwo);
     text-align: center;
+    
+    color: var(--white);
+    text-shadow:
+        0.05em 0 var(--black),
+        0 0.05em var(--black),
+        -0.05em 0 var(--black),
+        0 -0.05em var(--black),
+        -0.03em -0.03em var(--black),
+        -0.03em 0.03em var(--black),
+        0.03em -0.03em var(--black),
+        0.03em 0.03em var(--black);
 }
 
 #divAnswerFinal {
