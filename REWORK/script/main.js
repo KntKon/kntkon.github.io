@@ -1,5 +1,18 @@
 let curSelected;
 
+const _name = "Lorem Ipsum"
+
+function knt() {
+    const _knt = document.getElementById('knt');
+    if(_knt){
+        _knt.innerText = `~ ${_name} ~`;
+    }
+    document.title = document.title.replace('$NAME', _name);
+}
+
+knt();
+
+
 function goTo(page) {
     let path = `./${page}.html`;
     document.location.href = path;

@@ -38,6 +38,16 @@
 
 .button {
     box-shadow: 0 0 0 var(--border) var(--grey) inset;
+    color: var(--black);
+    text-shadow:
+        0.05em 0 var(--silver),
+        0 0.05em var(--silver),
+        -0.05em 0 var(--silver),
+        0 -0.05em var(--silver),
+        -0.03em -0.03em var(--silver),
+        -0.03em 0.03em var(--silver),
+        0.03em -0.03em var(--silver),
+        0.03em 0.03em var(--silver);
 }
 
 .divAnswerFourSmall {
@@ -50,7 +60,6 @@
     background-color: var(--silver);
     border-radius: var(--radius);
 
-    
     line-height: var(--unitFour);
     font-size: var(--unitTwo);
     text-align: center;
