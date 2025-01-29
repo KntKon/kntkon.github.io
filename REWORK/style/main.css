@@ -186,10 +186,8 @@ body {
     border-radius: var(--radius);
     border: var(--border) solid var(--grey);
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     z-index: 999;
+    text-align: center;
 }
 
 #modalBackground {
