@@ -1,8 +1,7 @@
 let curSelected;
 
-const _name = "Lorem Ipsum"
-
 function knt() {
+    const _name = "未命名的APP";
     const _knt = document.getElementById('knt');
     if(_knt){
         _knt.innerText = `~ ${_name} ~`;

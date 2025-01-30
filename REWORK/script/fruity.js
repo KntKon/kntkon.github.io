@@ -123,7 +123,7 @@ function genFruits() {
 // DONE
 function gen1stEq(_difficulty) {
     let _opeDifficulty;
-    if(_difficulty <= 1) _opeDifficulty = 0;
+    if(_difficulty <= 2) _opeDifficulty = 0;
     else _opeDifficulty = 1;
     equations.push([]);
     equations[0][0] = genMlt(_difficulty); equations[0][1] = 0; equations[0][2] = genOpe(_opeDifficulty);
