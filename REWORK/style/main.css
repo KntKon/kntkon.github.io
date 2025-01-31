@@ -210,7 +210,7 @@ body {
     padding: var(--unitOne);
 
     position: absolute;
-    top: calc( ( 100% - ( var(--unitFour) * 3 + var(--unitOne) * 4 + ( var(--border) * 2 ) ) ) / 2 );
+    bottom: calc( var(--unitOne) * 1 + ( var(--border) * 2 ) );
     left: calc( ( 100% - ( var(--unitFour) * 5 + var(--unitOne) * 6 + var(--border) * 2 ) ) / 2);
 
     background-color: var(--white);
