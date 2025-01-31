@@ -83,6 +83,30 @@
             </div>
         </div>
         <div onclick="closeModal()"  id="modalBackground"></div>
+
+        <div id="keypad">
+            <div class="keypadRow">
+                <div class="key" onclick="keypadAdd('-')">-</div>
+                <div class="keyInput" id="keypadInput"></div>
+                <div class="keyButton" onclick="answerKeypad('fruity')"></div>
+                <div class="key keyErase" onclick="keypadAdd('-1')"></div>
+            </div>
+            <div class="keypadRow">
+                <div class="key" onclick="keypadAdd('0')">0</div>
+                <div class="key" onclick="keypadAdd('1')">1</div>
+                <div class="key" onclick="keypadAdd('2')">2</div>
+                <div class="key" onclick="keypadAdd('3')">3</div>
+                <div class="key" onclick="keypadAdd('4')">4</div>
+            </div>
+            <div class="keypadRow">
+                <div class="key" onclick="keypadAdd('5')">5</div>
+                <div class="key" onclick="keypadAdd('6')">6</div>
+                <div class="key" onclick="keypadAdd('7')">7</div>
+                <div class="key" onclick="keypadAdd('8')">8</div>
+                <div class="key" onclick="keypadAdd('9')">9</div>
+            </div>
+        </div>
+        <div onclick="closeKeypad()"  id="keypadBackground"></div>
         
         <div onclick="download()" id="download"></div>
         <div onclick="goTo('index')" id="home"></div>
@@ -92,3 +116,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="./script/main.js"></script>
 <script src="./script/fruity.js"></script>
+<script>  </script>

@@ -11,6 +11,17 @@ function knt() {
 
 knt();
 
+    let test = 0;
+    function recur() { test++; recur(); };
+    function testfunc() {
+        try {
+            recur();
+          } catch (ex) {
+            alert(`Relaunching after ${test} attempts.`); test=0; 
+            testfunc();
+          }
+    }
+
 
 function goTo(page) {
     let path = `./${page}.html`;
@@ -74,4 +85,53 @@ function setDifficulty() {
 
     const buttonDifficulty = document.getElementById('difficulty');
     buttonDifficulty.style.setProperty('background-position-x', `calc((0px - var(--unitFour)*${difficulty}))`);
+}
+
+let keypadId = '';
+
+function openKeypad(_id) {
+    const keypad = document.getElementById('keypad');
+    document.body.style.setProperty('--keypadScale', '1');
+    keypadId = _id;
+}
+
+function closeKeypad() {
+    const keypad = document.getElementById('keypad');
+    document.body.style.setProperty('--keypadScale', '0');
+    const keypadInput = document.getElementById('keypadInput');
+    keypadInput.innerText = '';
+}
+
+function answerKeypad(_page) {
+    const keypadInput = document.getElementById('keypadInput');
+
+    if(_page == 'fruity') {
+        let elButtons = document.getElementsByClassName('answerFruits');
+        elButtons[keypadId].innerText = keypadInput.innerText;
+    }
+    
+    closeKeypad();
+}
+
+function keypadAdd(_key) {
+    const keypadInput = document.getElementById('keypadInput');
+    if(_key == '-1') {
+        keypadInput.innerText =  keypadInput.innerText.substring(0,  keypadInput.innerText.length - 1);
+    } else if(_key == '0') {
+        if(keypadInput.innerText.length > 0 && keypadInput.innerText.length < 6) {
+            if(keypadInput.innerText[0] == '-' && keypadInput.innerText.length == 1) {
+                /* Do Nothing */
+            } else {
+                keypadInput.innerText += _key;
+            }
+        }
+    } else if(_key == '-') {
+        if(keypadInput.innerText.length == 0) {
+            keypadInput.innerText += _key;
+        }
+    } else {
+        if(keypadInput.innerText.length < 6) {
+            keypadInput.innerText += _key;
+        }
+    }
 }

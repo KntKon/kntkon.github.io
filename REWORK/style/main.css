@@ -29,7 +29,7 @@ body {
     --grey:   rgb(190, 190, 190);
     --black:  rgb( 69,  72,  73);
     --lGreen: rgb(144, 238, 144);
-    --Green:  rgb(  0, 128,   0);
+    --Green:  rgb( 64, 140,  64);
     --dGreen: rgb(  0, 100,   0);
     --lRed:   rgb(240, 128, 128);
     --Red:    rgb(170,   0,   0);
@@ -47,6 +47,7 @@ body {
     --mBorder:   calc( 0px - ( var(--unitOne) / 4 ) );
 
     --modalScale: 0;
+    --keypadScale: 0;
 
     --contentHeight: calc( var(--maxSize) + ( var(--border) * 2 ) );
     --contentWidth: calc( var(--maxSize) + ( var(--border) * 2 ) );
@@ -73,7 +74,7 @@ body {
 
     background-color: var(--white);
     border-radius: var(--unitOne);
-    border: var(--border) solid var(--grey);
+    box-shadow: 0 0 0 calc(var(--border)) var(--grey), 0 calc(var(--border)*1.5) 0 calc(var(--border)) var(--grey) ;
 
     display: flex;
     flex-wrap: wrap;
@@ -92,7 +93,7 @@ body {
     background-size: var(--unitFour);
     background-color: var(--white);
     border-radius: var(--unitOne);
-    border: var(--border) solid var(--grey);
+    box-shadow: 0 0 0 calc(var(--border)) var(--grey), 0 calc(var(--border)*1.5) 0 calc(var(--border)) var(--grey) ;
 }
 
 #home {
@@ -107,7 +108,7 @@ body {
     background-size: var(--unitFour);
     background-color: var(--white);
     border-radius: var(--unitOne);
-    border: var(--border) solid var(--grey);
+    box-shadow: 0 0 0 calc(var(--border)) var(--grey), 0 calc(var(--border)*1.5) 0 calc(var(--border)) var(--grey) ;
 }
 
 #info {
@@ -122,7 +123,7 @@ body {
     background-size: var(--unitFour);
     background-color: var(--white);
     border-radius: var(--unitOne);
-    border: var(--border) solid var(--grey);
+    box-shadow: 0 0 0 calc(var(--border)) var(--grey), 0 calc(var(--border)*1.5) 0 calc(var(--border)) var(--grey) ;
 }
 
 #difficulty {
@@ -138,7 +139,7 @@ body {
 
     background-color: var(--white);
     border-radius: var(--unitOne);
-    border: var(--border) solid var(--grey);
+    box-shadow: 0 0 0 calc(var(--border)) var(--grey), 0 calc(var(--border)*1.5) 0 calc(var(--border)) var(--grey) ;
 }
 
 #difficultyConfirm {
@@ -184,7 +185,7 @@ body {
 
     background-color: var(--white);
     border-radius: var(--radius);
-    border: var(--border) solid var(--grey);
+    box-shadow: 0 0 0 calc(var(--border)) var(--grey), 0 calc(var(--border)*1.5) 0 calc(var(--border)) var(--grey) ;
 
     z-index: 999;
     text-align: center;
@@ -200,6 +201,115 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: 500;
+}
+
+#keypad {
+    transform: scale( var(--keypadScale) );
+    width: calc( var(--unitFour) * 5 + var(--unitOne) * 4 );
+    height: calc( var(--unitFour) * 3 + var(--unitOne) * 2 );
+    padding: var(--unitOne);
+
+    position: absolute;
+    top: calc( ( 100% - ( var(--unitFour) * 3 + var(--unitOne) * 4 + ( var(--border) * 2 ) ) ) / 2 );
+    left: calc( ( 100% - ( var(--unitFour) * 5 + var(--unitOne) * 6 + var(--border) * 2 ) ) / 2);
+
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: 0 0 0 calc(var(--border)) var(--grey), 0 calc(var(--border)*1.5) 0 calc(var(--border)) var(--grey) ;
+
+    z-index: 999;
+    text-align: center;
+}
+
+#keypadBackground {
+    transform: scale( var(--keypadScale) );
+    background-color: rgba(0,0,0, .5) !important;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 500;
+}
+
+.keypadRow {
+    width: calc( var(--unitFour) * 5 + var(--unitOne) * 4 );
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.keypadRow + .keypadRow {
+    margin-top: var(--unitOne);
+}
+
+.keyIcon {
+    background: blue;
+    width: var(--unitFour);
+    height: var(--unitFour);
+}
+
+.keyInput {
+    width: calc( var(--unitFour) * 2 + var(--unitOne) );
+    height: var(--unitFour);
+    
+    line-height: var(--unitFour);
+    font-size: var(--unitTwo);
+    text-align: center;
+
+    background-color: var(--silver);
+    border-radius: var(--radius);
+
+    color: var(--black);
+    text-shadow:
+        0.05em 0 var(--white),
+        0 0.05em var(--white),
+        -0.05em 0 var(--white),
+        0 -0.05em var(--white),
+        -0.03em -0.03em var(--white),
+        -0.03em 0.03em var(--white),
+        0.03em -0.03em var(--white),
+        0.03em 0.03em var(--white);
+}
+
+.keyButton {
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    background-size: var(--unitFour);
+    background-color: var(--lGreen);
+    border-radius: var(--radius);
+    box-shadow: 0 0 0 var(--border) var(--Green) inset;
+}
+
+.key {
+    width: var(--unitFour);
+    height: var(--unitFour);
+
+    line-height: var(--unitFour);
+    font-size: var(--unitThree);
+    text-align: center;
+
+    background-color: var(--silver);
+    border-radius: var(--radius);
+    box-shadow: 0 0 0 var(--border) var(--grey) inset;
+
+    color: var(--black);
+    text-shadow:
+        0.05em 0 var(--white),
+        0 0.05em var(--white),
+        -0.05em 0 var(--white),
+        0 -0.05em var(--white),
+        -0.03em -0.03em var(--white),
+        -0.03em 0.03em var(--white),
+        0.03em -0.03em var(--white),
+        0.03em 0.03em var(--white);
+}
+
+.keyErase {
+    background-color: var(--lRed);
+    box-shadow: 0 0 0 var(--border) var(--Red) inset;
 }
 
 #puzzle {

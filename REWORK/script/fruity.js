@@ -242,7 +242,7 @@ function drawPuzzle() {
         if(i<elAnsFruits.length-1)
             elAnsFruits[i].classList.add(`fruit${fruits[i].name}1`);
 
-        elAnsFruits[i].setAttribute(`onclick`, `answerPrompt(${i})`);
+        elAnsFruits[i].setAttribute(`onclick`, `openKeypad(${i})`);
     }
 }
 
